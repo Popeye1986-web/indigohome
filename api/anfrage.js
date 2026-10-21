@@ -17,8 +17,8 @@ module.exports = async function handler(req, res) {
   const email = String(b.email || "").trim();
   if (!entries.length || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return res.status(400).json({ error: "bad_request" });
   const titel = NAMEN[b.formular] || "Anfrage";
-  const html = `<h2 style="font-family:Georgia,serif;color:#25235c">${esc(titel)}</h2><table cellpadding="6" style="font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse">` +
-    entries.map(([k, v]) => `<tr><td style="color:#6a6878;vertical-align:top;border-bottom:1px solid #eee">${esc(k)}</td><td style="border-bottom:1px solid #eee">${esc(v).replace(/\n/g, "<br>")}</td></tr>`).join("") + `</table>`;
+  const html = `<h2 style="font-family:Georgia,serif;color:#25405f">${esc(titel)}</h2><table cellpadding="6" style="font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse">` +
+    entries.map(([k, v]) => `<tr><td style="color:#5f6b7a;vertical-align:top;border-bottom:1px solid #eee">${esc(k)}</td><td style="border-bottom:1px solid #eee">${esc(v).replace(/\n/g, "<br>")}</td></tr>`).join("") + `</table>`;
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST", headers: { Authorization: "Bearer " + key, "Content-Type": "application/json" },
     body: JSON.stringify({ from, to: [to], reply_to: email, subject: `${titel} · ${b.name || email}`, html, text: entries.map(([k, v]) => `${k}: ${v}`).join("\n") })

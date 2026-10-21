@@ -5,15 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Verwaltung · Indigo Home GmbH</title>
 <meta name="description" content="Liegenschaftsverwaltung: administrative, technische und buchhalterische Bewirtschaftung von Mietliegenschaften.">
-<meta name="theme-color" content="#25235c">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#25405f">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css"><style>
 .process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:p}
 .process li{display:flex;gap:18px;padding:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);transition:transform .25s,border-color .25s}
-.process li:hover{transform:translateY(-4px);border-color:#d8c3a0}
+.process li:hover{transform:translateY(-4px);border-color:#bcd3ea}
 .process .pn{flex:none;font-family:var(--f-head);font-size:34px;line-height:1;color:var(--brass)}
 .process h3{font-size:22px;margin-bottom:8px}
 .process p{color:var(--muted);font-size:16px}
@@ -22,12 +23,12 @@
 @media (max-width:620px){.process{grid-template-columns:minmax(0,1fr)}}
 .svcs{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px}
 .svc{display:flex;flex-direction:column;gap:14px;padding:34px;border-radius:20px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .25s,box-shadow .25s}
-.svc:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(28,27,46,.05),0 24px 50px rgba(28,27,46,.12);color:inherit}
+.svc:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(22,34,49,.05),0 24px 50px rgba(22,34,49,.12);color:inherit}
 .svc h3{font-size:30px}
 .svc p{color:var(--muted)}
 .svc .more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--brass-2)}
-.svc.feat{background:var(--indigo);border-color:var(--indigo);color:#fff;background-image:radial-gradient(500px 300px at 100% 0%,rgba(184,146,90,.35),transparent 60%)}
-.svc.feat h3{color:#fff}.svc.feat p{color:#cfcde6}.svc.feat .more{color:#d9bd8f}
+.svc.feat{background:var(--indigo);border-color:var(--indigo);color:#fff;background-image:radial-gradient(500px 300px at 100% 0%,rgba(79,124,171,.35),transparent 60%)}
+.svc.feat h3{color:#fff}.svc.feat p{color:#c9d5e3}.svc.feat .more{color:#a9c6e4}
 .svc.feat .checks li::before{background-color:rgba(255,255,255,.12)}
 .svc .tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:var(--brass);color:#fff}
 @media (max-width:980px){.svcs{grid-template-columns:minmax(0,1fr)}}
@@ -40,12 +41,12 @@
 @media (max-width:980px){.refs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.refs{grid-template-columns:minmax(0,1fr)}}
 .valband{background:var(--indigo-3);color:#fff;border-radius:28px;padding:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:start;position:relative;overflow:hidden}
-.valband::before{content:"";position:absolute;left:-160px;bottom:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(184,146,90,.25),transparent 65%)}
+.valband::before{content:"";position:absolute;left:-160px;bottom:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(79,124,171,.25),transparent 65%)}
 .valband>*{position:relative}
 .valband h2{color:#fff;font-size:clamp(34px,4vw,52px)}
-.valband .eyebrow{color:#d9bd8f}
-.valband p.l{color:#cfcde6;font-size:18px;margin-top:18px}
-.valband .checks{margin-top:26px;color:#e7e6f5}
+.valband .eyebrow{color:#a9c6e4}
+.valband p.l{color:#c9d5e3;font-size:18px;margin-top:18px}
+.valband .checks{margin-top:26px;color:#e5ecf4}
 .valband .checks li::before{background-color:rgba(255,255,255,.12)}
 .fcard{padding:34px;color:var(--ink)}
 .ftitle{font-size:28px}
@@ -72,7 +73,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="10" fill="#25235c"/><path d="M10 29V18.5L20 11l10 7.5V29" stroke="#b8925a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 29v-6.5h7V29" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Indigo Home</b><small>Immobilien</small></span></a>
+    <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><img src="img/logo.png" alt="Indigo Home GmbH" width="340" height="46"></a>
     <button class="menu" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <a href="verkauf.html">Verkauf</a>
@@ -110,7 +111,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <a class="brand" href="index.html" aria-label="Indigo Home GmbH"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="10" fill="#25235c"/><path d="M10 29V18.5L20 11l10 7.5V29" stroke="#b8925a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 29v-6.5h7V29" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Indigo Home</b><small>Immobilien</small></span></a>
+      <a class="brand" href="index.html" aria-label="Indigo Home GmbH"><img src="img/logo-weiss.png" alt="Indigo Home GmbH" width="384" height="52" loading="lazy"></a>
       <p style="margin-top:18px;max-width:28em">Wir verwalten, vermieten und verkaufen Immobilien. Persönlich, transparent und lösungsorientiert.</p>
       <div class="social"><a href="https://www.facebook.com/Indigo-Home-GmbH-Immobilien-112406141284418/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V11H7v4h3v9h4v-9h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a><a href="https://www.instagram.com/indigohomegmbh/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
     </div>
