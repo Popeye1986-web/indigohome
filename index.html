@@ -5,120 +5,173 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Indigo Home GmbH · Immobilien verkaufen, vermieten, verwalten</title>
 <meta name="description" content="Indigo Home GmbH aus Tägerwilen: Wir verkaufen, vermieten und verwalten Immobilien. Kostenlose Bewertung Ihrer Liegenschaft.">
-<meta name="theme-color" content="#25405f">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css"><style>
-.hero{position:relative;background:radial-gradient(900px 600px at 80% 20%,rgba(79,124,171,.18),transparent 60%),linear-gradient(160deg,#172a40 0%,#25405f 60%,#2b4c72 100%);color:#fff;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;min-height:calc(100svh - 80px);padding-block:72px 96px}
-.hero .eyebrow{color:#a9c6e4}
-.hero h1{color:#fff;font-size:clamp(46px,6.4vw,88px);margin-top:22px;font-weight:400}
-.hero h1 em{font-style:italic;color:#a9c6e4}
-.hero .lead{color:#c9d5e3;font-size:clamp(17px,1.5vw,20px);max-width:34em;margin-top:24px}
+.hero{position:relative;overflow:hidden;margin-top:-84px;padding-top:84px;background:linear-gradient(180deg,var(--ice) 0%,#fff 92%)}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.75;pointer-events:none}
+.hero .b1{width:520px;height:520px;right:-120px;top:-60px;background:var(--sky-soft)}
+.hero .b2{width:380px;height:380px;left:-140px;bottom:-80px;background:#e3eefb}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;min-height:calc(100svh - 84px);padding-block:56px 80px}
+.hero h1{font-size:clamp(44px,6.4vw,92px);margin-top:24px;letter-spacing:-.045em}
+.hero h1 em{position:relative;display:inline-block;padding-right:.08em}
+.hero h1 em svg{position:absolute;left:0;right:0;bottom:-.12em;width:100%;height:.3em;overflow:visible}
+.hero h1 em path{fill:none;stroke:var(--sky);stroke-width:5;stroke-linecap:round}
+.hero .lead{color:var(--muted);font-size:clamp(17px,1.45vw,20px);max-width:33em;margin-top:26px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.hero .trust{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:40px;color:#b3c4d8;font-size:14.5px;list-style:none;padding:0}
-.hero .trust li{display:flex;align-items:center;gap:8px}
-.hero .trust li::before{content:"";width:6px;height:6px;border-radius:50%;background:#a9c6e4}
-.hart{position:relative;justify-self:center;width:min(100%,520px)}
-.hart svg{width:100%;height:auto;display:block}
-.hchips{position:absolute;inset:0;pointer-events:none}
-.hc{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:14px;background:rgba(255,255,255,.95);color:var(--indigo-3);font-size:14px;font-weight:600;box-shadow:0 18px 40px rgba(0,0,0,.3);white-space:nowrap}
-.hc i{font-style:normal;width:26px;height:26px;border-radius:8px;background:var(--indigo);color:#fff;display:grid;place-items:center;font-size:12.5px}
-.hc b{color:#17663d}
-.hc.c1{left:-4%;top:22%}.hc.c2{right:-2%;top:48%}.hc.c3{left:8%;bottom:6%}
-.hc.c3 i{background:var(--brass)}
+.hero .nums{display:flex;flex-wrap:wrap;gap:28px;margin-top:44px;padding:0;list-style:none}
+.hero .nums li{display:flex;flex-direction:column;line-height:1.25}
+.hero .nums b{font-family:var(--f-head);font-size:34px;color:var(--navy);letter-spacing:-.03em}
+.hero .nums span{font-size:14px;color:var(--muted)}
+.hart{position:relative;justify-self:center;width:min(100%,540px);aspect-ratio:1/1.02}
+.scene{position:absolute;inset:0;border-radius:44% 44% 32px 32px / 38% 38% 32px 32px;background:linear-gradient(180deg,#d7e9f8 0%,#eef6fd 70%,#fff 100%);overflow:hidden;box-shadow:inset 0 0 0 1px rgba(37,64,95,.06)}
+.scene .sun{position:absolute;width:20%;aspect-ratio:1;border-radius:50%;background:var(--sun);right:16%;top:16%;box-shadow:0 0 0 18px rgba(255,201,77,.18),0 0 0 40px rgba(255,201,77,.08)}
+.cloud{position:absolute;height:22px;border-radius:999px;background:#fff;opacity:.95}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud::before{width:30px;height:30px;left:14px;top:-15px}.cloud::after{width:22px;height:22px;left:38px;top:-10px}
+.cloud.c1{width:96px;top:34%;left:30%}.cloud.c2{width:74px;top:38%;right:6%;transform:scale(.8)}
+.scene .house{position:absolute;left:9%;right:9%;bottom:14%;color:var(--navy)}
+.scene .ground{position:absolute;left:0;right:0;bottom:0;height:14%;background:#fff;border-top:2px solid rgba(37,64,95,.12)}
+.fc{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:16px;background:#fff;color:var(--navy-3);font-size:14px;font-weight:600;box-shadow:0 20px 40px -14px rgba(19,34,53,.3);white-space:nowrap}
+.fc i{width:26px;height:26px;border-radius:9px;background:var(--sky-soft);color:var(--sky-d);display:grid;place-items:center}
+.fc.f1{left:-6%;top:40%}.fc.f2{right:-4%;top:64%}
+.sticker{position:absolute;left:6%;top:6%;width:104px;aspect-ratio:1;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--f-acc);font-style:italic;font-size:26px;transform:rotate(-12deg);box-shadow:0 16px 30px -12px rgba(19,34,53,.5)}
+.sticker::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.35)}
+.spin{position:absolute;left:-34px;bottom:12%;width:118px;height:118px;border-radius:50%;background:#fff;box-shadow:var(--shadow);display:grid;place-items:center;color:var(--navy);text-decoration:none;z-index:2}
+.spin>svg{position:absolute;inset:0;width:100%;height:100%}
+.spin text{font:600 9.5px var(--f);letter-spacing:.08em;text-transform:uppercase;fill:var(--navy)}
+.spin span{width:48px;height:48px;border-radius:50%;background:var(--sun);display:grid;place-items:center;transform:rotate(90deg);transition:transform .4s var(--spring)}
+.spin:hover span{transform:rotate(90deg) scale(1.12)}
 @media (prefers-reduced-motion:no-preference){
-  .hero .htxt>*{opacity:0;animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
-  .hero .htxt>*:nth-child(2){animation-delay:.1s}.hero .htxt>*:nth-child(3){animation-delay:.2s}.hero .htxt>*:nth-child(4){animation-delay:.3s}.hero .htxt>*:nth-child(5){animation-delay:.4s}
-  @keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-  .hart .draw path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s cubic-bezier(.6,0,.3,1) forwards}
-  .hart .draw path:nth-child(2){animation-delay:.5s}.hart .draw path:nth-child(3){animation-delay:.8s}.hart .draw path:nth-child(4){animation-delay:1.1s}
-  .hart .draw.thin path{animation-delay:1.4s;animation-duration:1.2s}
-  @keyframes draw{to{stroke-dashoffset:0}}
-  .hart .ground{stroke-dasharray:460;stroke-dashoffset:460;animation:draw2 1.2s ease-out forwards}
-  @keyframes draw2{to{stroke-dashoffset:0}}
-  .hart .sun{transform-origin:390px 120px;animation:pulse 5s ease-in-out infinite}
-  @keyframes pulse{50%{transform:scale(1.12);opacity:.8}}
-  .hart .key{opacity:0;animation:fade .6s forwards 2.6s}
-  @keyframes fade{to{opacity:1}}
-  .hc{opacity:0;transform:translateY(14px) scale(.96);animation:chip 9s infinite}
-  .hc.c1{animation-delay:2s}.hc.c2{animation-delay:3.2s}.hc.c3{animation-delay:4.4s}
-  @keyframes chip{0%{opacity:0;transform:translateY(14px) scale(.96)}6%,70%{opacity:1;transform:none}78%,100%{opacity:0;transform:translateY(-8px)}}
+  .hin>*{opacity:0;animation:hin 1s var(--ease) forwards}
+  .hin>*:nth-child(2){animation-delay:.08s}.hin>*:nth-child(3){animation-delay:.16s}.hin>*:nth-child(4){animation-delay:.24s}.hin>*:nth-child(5){animation-delay:.32s}
+  @keyframes hin{from{opacity:0;transform:translateY(30px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+  .hero h1 em path{stroke-dasharray:1;stroke-dashoffset:1;animation:line 1s var(--ease) 1s forwards}
+  @keyframes line{to{stroke-dashoffset:0}}
+  .hart{animation:pop 1.1s var(--ease) both .1s}
+  @keyframes pop{from{opacity:0;transform:scale(.92) translateY(20px)}}
+  .scene .sun{animation:rise 1.6s var(--ease) both .4s}
+  @keyframes rise{from{transform:translateY(120%);opacity:0}}
+  .cloud.c1{animation:drift 14s ease-in-out infinite alternate}
+  .cloud.c2{animation:drift2 18s ease-in-out infinite alternate}
+  @keyframes drift{to{translate:46px 0}}@keyframes drift2{to{translate:-40px 0}}
+  .fc{opacity:0;animation:fcin .8s var(--spring) forwards,bob 5s ease-in-out infinite}
+  .fc.f1{animation-delay:1.6s,2.4s}.fc.f2{animation-delay:2s,3s}
+  @keyframes fcin{from{opacity:0;transform:translateY(16px) scale(.9)}to{opacity:1;transform:none}}
+  @keyframes bob{50%{translate:0 -8px}}
+  .sticker{opacity:0;animation:stick .9s var(--spring) forwards 2.6s}
+  @keyframes stick{from{opacity:0;transform:rotate(-40deg) scale(.3)}to{opacity:1;transform:rotate(-12deg) scale(1)}}
+  .sticker:hover{animation:none;opacity:1;transform:rotate(6deg) scale(1.06);transition:transform .4s var(--spring)}
+  .spin>svg{animation:spin 16s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .b1{animation:float 12s ease-in-out infinite alternate}.hero .b2{animation:float 15s ease-in-out infinite alternate-reverse}
+  @keyframes float{to{transform:translate(-40px,30px) scale(1.08)}}
 }
-@media (max-width:960px){.hero .wrap{grid-template-columns:minmax(0,1fr);min-height:0;padding-block:48px 72px}.hart{width:min(100%,420px);order:-1}.hc{font-size:12.5px}}
-.stats{background:var(--white);border-bottom:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-block:44px}
-.stat{display:flex;flex-direction:column;gap:4px;padding-left:22px;border-left:2px solid var(--brass)}
-.stat .n{font-family:var(--f-head);font-size:clamp(38px,4vw,52px);line-height:1;color:var(--indigo-3)}
-.stat .t{color:var(--muted);font-size:15px}
-@media (max-width:700px){.stats .wrap{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr);min-height:0;padding-block:28px 64px;gap:28px}
+  .hart{width:min(100%,400px);order:-1;aspect-ratio:1/.9}
+  .fc{font-size:12.5px}.fc.f1{left:-2%}.fc.f2{right:-2%}
+  .sticker{width:80px;font-size:20px}
+  .spin{display:none}
+}
+.marquee{background:var(--navy);color:#fff;overflow:hidden;padding-block:22px}
+.marquee .track{display:flex;width:max-content;gap:0}
+.marquee ul{display:flex;align-items:center;gap:36px;margin:0;padding:0 18px;list-style:none;font-family:var(--f-head);font-weight:600;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em;white-space:nowrap}
+.marquee li{display:flex;align-items:center;gap:36px}
+.marquee li::after{content:"";width:12px;height:12px;border-radius:4px;background:var(--sky);transform:rotate(45deg)}
+.marquee li:nth-child(3n)::after{background:var(--sun)}
+@media (prefers-reduced-motion:no-preference){.marquee .track{animation:mq 40s linear infinite}.marquee:hover .track{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}}
+@media (prefers-reduced-motion:reduce){.marquee ul+ul{display:none}.marquee ul{flex-wrap:wrap;white-space:normal}}
 </style><style>
-.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:p}
-.process li{display:flex;gap:18px;padding:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);transition:transform .25s,border-color .25s}
-.process li:hover{transform:translateY(-4px);border-color:#bcd3ea}
-.process .pn{flex:none;font-family:var(--f-head);font-size:34px;line-height:1;color:var(--brass)}
-.process h3{font-size:22px;margin-bottom:8px}
+.ptrack{display:none}
+.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.process li{position:relative;display:flex;flex-direction:column;gap:10px;padding:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;transition:transform .45s var(--spring),box-shadow .3s,border-color .3s}
+.process li::after{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,var(--sky),var(--navy));transform:scaleX(0);transform-origin:0;transition:transform .6s var(--ease)}
+.process li:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 24px 48px -18px rgba(19,34,53,.25)}
+.process li:hover::after{transform:scaleX(1)}
+.process .pn{font-family:var(--f-head);font-weight:800;font-size:46px;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px var(--sky);transition:color .35s}
+.process li:hover .pn{color:var(--sky)}
+.process h3{font-size:21px;letter-spacing:-.02em}
 .process p{color:var(--muted);font-size:16px}
-.process li.reveal:nth-child(3n+2){transition-delay:.08s}.process li.reveal:nth-child(3n){transition-delay:.16s}
 @media (max-width:980px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.process{grid-template-columns:minmax(0,1fr)}}
-.svcs{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px}
-.svc{display:flex;flex-direction:column;gap:14px;padding:34px;border-radius:20px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .25s,box-shadow .25s}
-.svc:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(22,34,49,.05),0 24px 50px rgba(22,34,49,.12);color:inherit}
-.svc h3{font-size:30px}
-.svc p{color:var(--muted)}
-.svc .more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--brass-2)}
-.svc.feat{background:var(--indigo);border-color:var(--indigo);color:#fff;background-image:radial-gradient(500px 300px at 100% 0%,rgba(79,124,171,.35),transparent 60%)}
-.svc.feat h3{color:#fff}.svc.feat p{color:#c9d5e3}.svc.feat .more{color:#a9c6e4}
-.svc.feat .checks li::before{background-color:rgba(255,255,255,.12)}
-.svc .tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:var(--brass);color:#fff}
-@media (max-width:980px){.svcs{grid-template-columns:minmax(0,1fr)}}
+.svcs{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:18px}
+.svc{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:36px;border-radius:28px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform .45s var(--spring),box-shadow .3s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 28px 56px -22px rgba(19,34,53,.3);color:inherit}
+.svc h3{font-size:32px}
+.svc p{color:var(--muted);max-width:30em}
+.svc .sic{width:58px;height:58px;border-radius:18px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring),background .3s}
+.svc:hover .sic{transform:rotate(-10deg) scale(1.08);background:var(--sun)}
+.svc .more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--navy)}
+.svc .more svg{transition:transform .35s var(--spring)}
+.svc:hover .more svg{transform:translateX(5px)}
+.svc.feat{grid-row:span 2;background:var(--navy);border-color:var(--navy);color:#fff;padding-bottom:200px}
+.svc.feat h3{color:#fff;font-size:44px}.svc.feat p{color:#c9d5e3}.svc.feat .more{color:#fff}
+.svc.feat .checks{color:#e5ecf4}
+.svc.feat .checks li::before{background-color:rgba(255,255,255,.12);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234aa3e0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
+.svc.feat .bld{position:absolute;right:-30px;bottom:-14px;width:min(78%,360px);color:rgba(255,255,255,.1);transition:transform .8s var(--ease),color .5s}
+.svc.feat:hover .bld{transform:translate(-14px,-6px);color:rgba(74,163,224,.28)}
+.svc .tag{align-self:flex-start;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--sun);color:var(--navy-3);transform:rotate(-2deg)}
+@media (max-width:900px){.svcs{grid-template-columns:minmax(0,1fr)}.svc.feat{grid-row:auto;padding-bottom:170px}}
 .refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ref{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;align-items:start;padding:24px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
-.ref .ric{grid-row:span 2;width:52px;height:52px;border-radius:14px;background:var(--indigo-soft);color:var(--indigo);display:grid;place-items:center}
-.ref h3{font-size:21px}
-.ref p{color:var(--muted);font-size:15px}
-.ref .kt{grid-column:2;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brass-2)}
+.ref{display:flex;flex-direction:column;gap:6px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);transition:box-shadow .3s,border-color .3s;transform-style:preserve-3d}
+.ref:hover{box-shadow:0 24px 48px -20px rgba(19,34,53,.28);border-color:#cfdeec}
+.ref .rtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.ref .ric{width:54px;height:54px;border-radius:16px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring)}
+.ref:hover .ric{transform:translateY(-4px) rotate(-8deg)}
+.ref .kt{font-family:var(--f-head);font-weight:800;font-size:13px;letter-spacing:.06em;padding:6px 10px;border-radius:10px;border:1.5px solid var(--line);color:var(--navy)}
+.ref h3{font-size:24px;letter-spacing:-.025em}
+.ref p{color:var(--muted);font-size:15.5px}
+.ref .kn{margin-top:8px;font-size:13px;font-weight:600;color:var(--sky-d)}
 @media (max-width:980px){.refs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.refs{grid-template-columns:minmax(0,1fr)}}
-.valband{background:var(--indigo-3);color:#fff;border-radius:28px;padding:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:start;position:relative;overflow:hidden}
-.valband::before{content:"";position:absolute;left:-160px;bottom:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(79,124,171,.25),transparent 65%)}
+.valband{background:var(--navy);color:#fff;border-radius:36px;padding:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:start;position:relative;overflow:hidden}
+.valband>.bld{position:absolute;left:-30px;bottom:-12px;width:min(46%,440px);color:rgba(255,255,255,.07)}
 .valband>*{position:relative}
-.valband h2{color:#fff;font-size:clamp(34px,4vw,52px)}
-.valband .eyebrow{color:#a9c6e4}
+.valband>.bld{position:absolute}
+.valband h2{color:#fff;font-size:clamp(34px,4.2vw,56px)}
+.valband h2 em{color:var(--sky)}
+.valband .eyebrow{background:rgba(255,255,255,.1);color:#fff}
 .valband p.l{color:#c9d5e3;font-size:18px;margin-top:18px}
 .valband .checks{margin-top:26px;color:#e5ecf4}
-.valband .checks li::before{background-color:rgba(255,255,255,.12)}
-.fcard{padding:34px;color:var(--ink)}
-.ftitle{font-size:28px}
-@media (max-width:960px){.valband{grid-template-columns:minmax(0,1fr);padding:40px 26px}}
-@media (max-width:520px){.fcard{padding:24px}}
+.valband .checks li::before{background-color:rgba(255,255,255,.12);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234aa3e0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
+.fcard{padding:34px;color:var(--ink);border-radius:26px}
+.ftitle{font-size:26px;letter-spacing:-.025em}
+@media (max-width:960px){.valband{grid-template-columns:minmax(0,1fr);padding:40px 22px;border-radius:28px}}
+@media (max-width:520px){.fcard{padding:22px}}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.split h2{font-size:clamp(32px,4vw,50px)!important}
 @media (max-width:900px){.split{grid-template-columns:minmax(0,1fr);gap:32px}}
 .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.cols3 .card{padding:32px}
+.cols3 .card{padding:32px;transition:transform .45s var(--spring),box-shadow .3s}
+.cols3 .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(19,34,53,.25)}
 .cols3 h3{font-size:24px;margin-bottom:18px}
 @media (max-width:900px){.cols3{grid-template-columns:minmax(0,1fr)}}
-.cta{background:var(--brass-soft);border-radius:28px;padding:56px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.cta{position:relative;overflow:hidden;background:var(--ice-2);border-radius:32px;padding:56px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.cta::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--sun);opacity:.35}
+.cta>*{position:relative}
 .cta h2{font-size:clamp(30px,3.4vw,44px);max-width:16em}
 .cta p{color:var(--muted);margin-top:10px;max-width:36em}
 @media (max-width:520px){.cta{padding:32px 24px}}
 .info{display:flex;flex-direction:column;gap:22px}
 .info .it{display:flex;gap:16px;align-items:flex-start}
-.info .ic{flex:none;width:48px;height:48px;border-radius:14px;background:var(--indigo-soft);color:var(--indigo);display:grid;place-items:center}
+.info .ic{flex:none;width:50px;height:50px;border-radius:16px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring)}
+.info .it:hover .ic{transform:rotate(-8deg) scale(1.06)}
 .info small{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .info a,.info address,.info span.v{font-style:normal;font-size:18px;color:var(--ink);text-decoration:none;font-weight:500}
-.info a:hover{color:var(--brass-2)}
+.info a:hover{color:var(--sky-d)}
 </style>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><img src="img/logo.png" alt="Indigo Home GmbH" width="340" height="46"></a>
-    <button class="menu" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><img src="img/logo.png" alt="Indigo Home GmbH" width="311" height="42"></a>
+    <button class="menu" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h10"/></svg></button>
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <a href="verkauf.html">Verkauf</a>
       <a href="vermietung.html">Vermietung</a>
@@ -131,81 +184,64 @@
 </header>
 <main>
   <section class="hero" aria-labelledby="h1">
+    <span class="blob b1"></span><span class="blob b2"></span>
     <div class="wrap">
-      <div class="htxt">
-        <span class="eyebrow">Immobilien verkaufen · vermieten · verwalten</span>
-        <h1 id="h1">Ihre Immobilie <em>in den besten Händen.</em></h1>
+      <div class="htxt hin">
+        <span class="eyebrow">Verkaufen · Vermieten · Verwalten</span>
+        <h1 id="h1">Ihre Immobilie in den <em>besten Händen.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 14C70 4 160 2 296 10"/></svg></em></h1>
         <p class="lead">Als erfahrener Partner begleiten wir Sie beim Verkauf von Eigentumswohnungen, Bauland und Mehrfamilienhäusern, von der Festlegung des Verkaufspreises bis zur Beurkundung.</p>
         <div class="ctas"><a class="btn brass" href="verkauf.html#bewertung">Kostenlose Bewertung anfragen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#leistungen">Unsere Leistungen</a></div>
-        <ul class="trust"><li>Persönliche Begleitung</li><li>Geprüfte Kaufinteressenten</li><li>Bis zur Grundstückgewinnsteuer</li></ul>
+        <ul class="nums"><li><b data-count="3">3</b><span>Leistungen aus einer Hand</span></li><li><b data-count="9">9</b><span>Referenzliegenschaften</span></li><li><b data-count="7">7</b><span>Kantone</span></li></ul>
       </div>
       <div class="hart" aria-hidden="true">
-  <svg viewBox="0 0 520 520" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <defs><linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c6e4" stop-opacity=".55"/><stop offset="1" stop-color="#a9c6e4" stop-opacity="0"/></linearGradient></defs>
-    <circle class="sun" cx="390" cy="120" r="54" fill="url(#gl)"/>
-    <path class="ground" d="M30 440H490" stroke="#3d6693" stroke-width="2"/>
-    <g class="draw" stroke="#a9c6e4" stroke-width="3">
-      <path pathLength="1" d="M90 440V250L210 160l120 90v190"/>
-      <path pathLength="1" d="M330 440V300h110v140"/>
-      <path pathLength="1" d="M318 300l67-50 67 50"/>
-      <path pathLength="1" d="M180 440v-80h60v80"/>
-    </g>
-    <g class="draw thin" stroke="#7d9fc6" stroke-width="2">
-      <path pathLength="1" d="M120 290h40v40h-40zM260 290h40v40h-40z"/>
-      <path pathLength="1" d="M355 330h25v28h-25zM395 330h25v28h-25zM355 380h25v28h-25zM395 380h25v28h-25z"/>
-      <path pathLength="1" d="M190 230h40v34h-40z"/>
-    </g>
-    <path class="key" d="M246 400a12 12 0 1 1 0 .1M258 400h28m-8 0v10m-8-10v7" stroke="#fff" stroke-width="2.4"/>
-  </svg>
-  <div class="hchips">
-    <span class="hc c1"><i>1</i>Verkaufspreis festgelegt</span>
-    <span class="hc c2"><i>2</i>Käufer geprüft</span>
-    <span class="hc c3"><i>3</i>Beurkundet <b>✓</b></span>
+  <div class="scene">
+    <span class="sun" data-depth="10"></span>
+    <span class="cloud c1" data-depth="18"></span><span class="cloud c2" data-depth="8"></span>
+    <div class="house" data-depth="4"><svg class="bld anim" viewBox="0 0 358 168" aria-hidden="true" style="--d:500ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg></div>
+    <span class="ground"></span>
   </div>
+  <span class="fc f1" data-depth="22"><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4 8-9"/></svg></i>Bewertung erstellt</span>
+  <span class="fc f2" data-depth="14"><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4 8-9"/></svg></i>Käufer geprüft</span>
+  <span class="sticker" data-depth="26"><b>Verkauft!</b></span>
+  <a class="spin" href="#bewertung" aria-label="Zur kostenlosen Bewertung"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cp" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#cp" textLength="270" lengthAdjust="spacing">Kostenlose Bewertung · Jetzt anfragen · </textPath></text></svg><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
 </div>
     </div>
   </section>
 
-  <section class="stats" aria-label="Indigo Home in Zahlen">
-    <div class="wrap">
-      <div class="stat reveal"><span class="n" data-count="3">3</span><span class="t">Dienstleistungen aus einer Hand: Verkauf, Vermietung, Verwaltung</span></div>
-      <div class="stat reveal"><span class="n" data-count="9">9</span><span class="t">Referenzliegenschaften</span></div>
-      <div class="stat reveal"><span class="n" data-count="7">7</span><span class="t">Kantone: Thurgau, Zürich, St. Gallen, Appenzell Ausserrhoden, Aargau, Solothurn, Bern</span></div>
-    </div>
-  </section>
+  <div class="marquee" aria-label="Tätig in den Kantonen Thurgau, Zürich, St. Gallen, Appenzell Ausserrhoden, Aargau, Solothurn und Bern"><div class="track"><ul aria-hidden="true"><li>Thurgau</li><li>Zürich</li><li>St. Gallen</li><li>Appenzell Ausserrhoden</li><li>Aargau</li><li>Solothurn</li><li>Bern</li><li>Verkauf</li><li>Vermietung</li><li>Verwaltung</li></ul><ul aria-hidden="true"><li>Thurgau</li><li>Zürich</li><li>St. Gallen</li><li>Appenzell Ausserrhoden</li><li>Aargau</li><li>Solothurn</li><li>Bern</li><li>Verkauf</li><li>Vermietung</li><li>Verwaltung</li></ul></div></div>
 
   <section class="block" id="verkauf" aria-labelledby="h-v">
     <div class="wrap">
-      <div class="head reveal"><span class="eyebrow">Immobilie verkaufen</span><h2 id="h-v">Vom ersten Gespräch bis zur Beurkundung</h2><p>Wir begleiten Sie durch den ganzen Verkauf. Mit unserer Marktkenntnis erzielen Sie den bestmöglichen Verkaufserlös, ohne sich um die Details kümmern zu müssen.</p></div>
-      <ol class="process"><li class="reveal"><span class="pn">01</span><div><h3>Verkaufspreis festlegen</h3><p>Wir schätzen Ihre Immobilie mit fundierter Marktkenntnis ein und legen gemeinsam den Verkaufspreis fest.</p></div></li><li class="reveal"><span class="pn">02</span><div><h3>Kaufinteressenten prüfen</h3><p>Wir prüfen Interessenten auf Motivation und Bonität. So sprechen Sie nur mit ernsthaften Käufern.</p></div></li><li class="reveal"><span class="pn">03</span><div><h3>Besichtigungen und Verhandlungen</h3><p>Wir führen die Besichtigungen durch und verhandeln für Sie den bestmöglichen Verkaufserlös.</p></div></li><li class="reveal"><span class="pn">04</span><div><h3>Finanzierung begleiten</h3><p>Wir unterstützen die Käuferschaft bei der Finanzierung und Hypothek, damit der Kauf sicher zustande kommt.</p></div></li><li class="reveal"><span class="pn">05</span><div><h3>Beurkundung</h3><p>Wir begleiten Sie bis zur notariellen Beurkundung und Eigentumsübertragung.</p></div></li><li class="reveal"><span class="pn">06</span><div><h3>Grundstückgewinnsteuer</h3><p>Auch nach dem Verkauf sind wir für Sie da, bis zur Erklärung der Grundstückgewinnsteuer.</p></div></li></ol>
+      <div class="head reveal"><span class="eyebrow">Immobilie verkaufen</span><h2 id="h-v">Vom ersten Gespräch bis zur <em>Beurkundung</em></h2><p>Wir begleiten Sie durch den ganzen Verkauf. Mit unserer Marktkenntnis erzielen Sie den bestmöglichen Verkaufserlös, ohne sich um die Details kümmern zu müssen.</p></div>
+      <ol class="process stagger"><li class="reveal"><span class="pn">01</span><h3>Verkaufspreis festlegen</h3><p>Wir schätzen Ihre Immobilie mit fundierter Marktkenntnis ein und legen gemeinsam den Verkaufspreis fest.</p></li><li class="reveal"><span class="pn">02</span><h3>Kaufinteressenten prüfen</h3><p>Wir prüfen Interessenten auf Motivation und Bonität. So sprechen Sie nur mit ernsthaften Käufern.</p></li><li class="reveal"><span class="pn">03</span><h3>Besichtigungen und Verhandlungen</h3><p>Wir führen die Besichtigungen durch und verhandeln für Sie den bestmöglichen Verkaufserlös.</p></li><li class="reveal"><span class="pn">04</span><h3>Finanzierung begleiten</h3><p>Wir unterstützen die Käuferschaft bei der Finanzierung und Hypothek, damit der Kauf sicher zustande kommt.</p></li><li class="reveal"><span class="pn">05</span><h3>Beurkundung</h3><p>Wir begleiten Sie bis zur notariellen Beurkundung und Eigentumsübertragung.</p></li><li class="reveal"><span class="pn">06</span><h3>Grundstückgewinnsteuer</h3><p>Auch nach dem Verkauf sind wir für Sie da, bis zur Erklärung der Grundstückgewinnsteuer.</p></li></ol>
       <div class="reveal" style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn indigo" href="verkauf.html">Mehr zum Verkauf <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn line" href="verkauf.html#bewertung">Kostenlose Bewertung</a></div>
     </div>
   </section>
 
-  <section class="block" id="leistungen" aria-labelledby="h-l" style="background:var(--white);border-block:1px solid var(--line)">
+  <section class="block ice" id="leistungen" aria-labelledby="h-l">
     <div class="wrap">
-      <div class="head reveal"><span class="eyebrow">Leistungen</span><h2 id="h-l">Alles rund um Ihre Immobilie</h2><p>Ob Sie verkaufen, vermieten oder verwalten lassen möchten: Bei uns steht Ihre Zufriedenheit im Mittelpunkt.</p></div>
-      <div class="svcs">
+      <div class="head reveal"><span class="eyebrow">Leistungen</span><h2 id="h-l">Alles rund um <em>Ihre Immobilie</em></h2><p>Ob Sie verkaufen, vermieten oder verwalten lassen möchten: Bei uns steht Ihre Zufriedenheit im Mittelpunkt.</p></div>
+      <div class="svcs stagger">
         <a class="svc feat reveal" href="verkauf.html"><span class="tag">Unser Schwerpunkt</span><h3>Verkauf</h3><p>Eigentumswohnungen, Bauland, Einfamilien- und Mehrfamilienhäuser.</p>
-          <ul class="checks"><li>Bewertung und Verkaufspreis</li><li>Prüfung von Motivation und Bonität</li><li>Besichtigungen und Verhandlungen</li><li>Begleitung bis zur Beurkundung</li></ul><span class="more">Zum Verkauf <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a class="svc reveal" href="vermietung.html"><h3>Vermietung</h3><p>Wir finden für jede Liegenschaft die besten Mieterinnen und Mieter, von der Vermarktung bis zur Übergabe.</p><span class="more">Zur Vermietung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a class="svc reveal" href="verwaltung.html"><h3>Verwaltung</h3><p>Administrative, technische und buchhalterische Bewirtschaftung Ihrer Mietliegenschaft, lösungsorientiert und transparent.</p><span class="more">Zur Verwaltung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <ul class="checks"><li>Bewertung und Verkaufspreis</li><li>Prüfung von Motivation und Bonität</li><li>Besichtigungen und Verhandlungen</li><li>Begleitung bis zur Beurkundung</li></ul><span class="more">Zum Verkauf <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><svg class="bld " viewBox="0 0 358 168" aria-hidden="true" style="--d:0ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg></a>
+        <a class="svc reveal" href="vermietung.html"><span class="sic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7a4 4 0 1 1-3.9 4.9L4 19v2h3v-2h2v-2h2l1.1-1.1A4 4 0 0 1 15 7z"/><circle cx="16" cy="10" r="1"/></svg></span><h3>Vermietung</h3><p>Wir finden für jede Liegenschaft die besten Mieterinnen und Mieter, von der Vermarktung bis zur Übergabe.</p><span class="more">Zur Vermietung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="svc reveal" href="verwaltung.html"><span class="sic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><h3>Verwaltung</h3><p>Administrative, technische und buchhalterische Bewirtschaftung Ihrer Mietliegenschaft, lösungsorientiert und transparent.</p><span class="more">Zur Verwaltung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
   </section>
 
   <section class="block" aria-labelledby="h-r">
     <div class="wrap">
-      <div class="head reveal"><span class="eyebrow">Referenzen</span><h2 id="h-r">Liegenschaften in sieben Kantonen</h2><p>Eine Auswahl der Liegenschaften, für die wir tätig sind und waren.</p></div>
-      <div class="refs"><article class="ref reveal"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><div><h3>Liegenschaft Tägerwilen</h3><p>Wohnungen und Gewerbeetagen</p></div><span class="kt">Kanton Thurgau</span></article><article class="ref reveal"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><div><h3>Liegenschaft Matzingen</h3><p>Gewerbeliegenschaft</p></div><span class="kt">Kanton Thurgau</span></article><article class="ref reveal"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><div><h3>Liegenschaft Egg bei Zürich</h3><p>Gewerbeliegenschaft</p></div><span class="kt">Kanton Zürich</span></article><article class="ref reveal"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><div><h3>Liegenschaft Rudolfstetten</h3><p>Gewerbeliegenschaft</p></div><span class="kt">Kanton Aargau</span></article><article class="ref reveal"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><div><h3>Liegenschaft Olten</h3><p>Wohn- und Gewerbeeinheiten, Ladenflächen</p></div><span class="kt">Kanton Solothurn</span></article><article class="ref reveal"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><div><h3>Liegenschaft Thun</h3><p>Wohn- und Gewerbeeinheiten</p></div><span class="kt">Kanton Bern</span></article></div>
+      <div class="head reveal"><span class="eyebrow">Referenzen</span><h2 id="h-r">Liegenschaften in <em>sieben Kantonen</em></h2><p>Eine Auswahl der Liegenschaften, für die wir tätig sind und waren.</p></div>
+      <div class="refs stagger"><article class="ref reveal tilt"><div class="rtop"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><span class="kt">TG</span></div><h3>Tägerwilen</h3><p>Wohnungen und Gewerbeetagen</p><span class="kn">Kanton Thurgau</span></article><article class="ref reveal tilt"><div class="rtop"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><span class="kt">TG</span></div><h3>Matzingen</h3><p>Gewerbeliegenschaft</p><span class="kn">Kanton Thurgau</span></article><article class="ref reveal tilt"><div class="rtop"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><span class="kt">ZH</span></div><h3>Egg bei Zürich</h3><p>Gewerbeliegenschaft</p><span class="kn">Kanton Zürich</span></article><article class="ref reveal tilt"><div class="rtop"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><span class="kt">AG</span></div><h3>Rudolfstetten</h3><p>Gewerbeliegenschaft</p><span class="kn">Kanton Aargau</span></article><article class="ref reveal tilt"><div class="rtop"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><span class="kt">SO</span></div><h3>Olten</h3><p>Wohn- und Gewerbeeinheiten, Ladenflächen</p><span class="kn">Kanton Solothurn</span></article><article class="ref reveal tilt"><div class="rtop"><span class="ric"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span><span class="kt">BE</span></div><h3>Thun</h3><p>Wohn- und Gewerbeeinheiten</p><span class="kn">Kanton Bern</span></article></div>
       <div class="reveal" style="margin-top:28px"><a class="btn line" href="referenzen.html">Alle Referenzen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="block" id="bewertung" aria-labelledby="h-b" style="padding-top:0">
     <div class="wrap">
-      <div class="valband reveal">
-        <div><span class="eyebrow">Kostenlos und unverbindlich</span><h2 id="h-b">Was ist Ihre Immobilie wert?</h2>
+      <div class="valband reveal"><svg class="bld " viewBox="0 0 358 168" aria-hidden="true" style="--d:0ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg>
+        <div><span class="eyebrow">Kostenlos und unverbindlich</span><h2 id="h-b" style="margin-top:18px">Was ist Ihre Immobilie <em>wert?</em></h2>
           <p class="l">Erfahren Sie, welchen Preis Ihre Liegenschaft heute erzielen kann. Wir melden uns so rasch wie möglich und besprechen mit Ihnen das weitere Vorgehen.</p>
           <ul class="checks"><li>Persönliche Einschätzung durch unsere Fachleute</li><li>Vertraulich, ohne Verpflichtung zum Verkauf</li><li>Klare Empfehlung zum Verkaufspreis</li></ul></div>
         <form class="form card fcard" data-form="bewertung" data-subject="Bewertungsanfrage" data-ok="Vielen Dank. Wir melden uns so rasch wie möglich für Ihre kostenlose Bewertung." novalidate>
@@ -229,9 +265,10 @@
 
 </main>
 <footer>
+  <svg class="bld deco" viewBox="0 0 358 168" aria-hidden="true" style="--d:0ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg>
   <div class="wrap">
     <div>
-      <a class="brand" href="index.html" aria-label="Indigo Home GmbH"><img src="img/logo-weiss.png" alt="Indigo Home GmbH" width="384" height="52" loading="lazy"></a>
+      <a class="brand" href="index.html" aria-label="Indigo Home GmbH"><img src="img/logo-weiss.png" alt="Indigo Home GmbH" width="370" height="50" loading="lazy"></a>
       <p style="margin-top:18px;max-width:28em">Wir verwalten, vermieten und verkaufen Immobilien. Persönlich, transparent und lösungsorientiert.</p>
       <div class="social"><a href="https://www.facebook.com/Indigo-Home-GmbH-Immobilien-112406141284418/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V11H7v4h3v9h4v-9h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a><a href="https://www.instagram.com/indigohomegmbh/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
     </div>

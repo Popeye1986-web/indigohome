@@ -21,8 +21,38 @@ window.KONTAKT = { telefon: "+41 44 593 76 15", email: "info@indigohome.ch" };
   }
   // Kopfzeile beim Scrollen
   const top = document.querySelector(".top");
-  const onScroll = () => top && top.classList.toggle("scrolled", scrollY > 8);
+  const bar = document.querySelector(".progress");
+  const onScroll = () => {
+    top && top.classList.toggle("scrolled", scrollY > 8);
+    if (bar) { const h = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty("--p", h > 0 ? Math.min(1, scrollY / h) : 0); }
+  };
   addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  // Karten in Rastern nacheinander einblenden
+  all(".stagger").forEach(g => [...g.children].forEach((c, i) => c.style.setProperty("--rd", (i % 3) * 0.09 + Math.floor(i / 3) * 0.05 + "s")));
+  // Hero: Elemente folgen leicht der Maus (Tiefe)
+  const hart = document.querySelector(".hart");
+  if (hart && fine && !calm) {
+    const layers = [...hart.querySelectorAll("[data-depth]")];
+    let raf = 0;
+    hart.closest(".hero").addEventListener("pointermove", e => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+        layers.forEach(l => { const d = +l.dataset.depth; l.style.translate = `${-x * d}px ${-y * d}px`; });
+      });
+    });
+  }
+  // Karten kippen leicht zur Maus
+  if (fine && !calm) all(".tilt").forEach(c => {
+    c.addEventListener("pointermove", e => {
+      const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      c.style.transition = "transform .1s"; c.style.transform = `perspective(800px) rotateX(${-y * 6}deg) rotateY(${x * 8}deg) translateY(-4px)`;
+    });
+    c.addEventListener("pointerleave", () => { c.style.transition = "transform .6s cubic-bezier(.34,1.56,.64,1)"; c.style.transform = ""; });
+  });
   // Einblenden
   const els = all(".reveal");
   if ("IntersectionObserver" in window) {
