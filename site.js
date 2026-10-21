@@ -68,6 +68,43 @@ window.KONTAKT = { telefon: "+41 44 593 76 15", email: "info@indigohome.ch" };
   }), { threshold: .5 }) : null;
   all("[data-count]").forEach(e => cio ? cio.observe(e) : (e.textContent = e.dataset.count));
 
+  // Kaufvertrag: Verkäufer und Käufer unterschreiben, danach erscheint das Siegel
+  const con = document.querySelector("svg.contract");
+  if (con) {
+    const s1 = con.querySelector("#sg1"), s2 = con.querySelector("#sg2"), seal = con.querySelector(".seal");
+    const p1 = con.querySelector(".p1"), p2 = con.querySelector(".p2");
+    const done = () => { [s1, s2].forEach(s => s.style.strokeDashoffset = 0); seal.setAttribute("opacity", 1); };
+    if (calm) done();
+    else {
+      const wait = ms => new Promise(r => setTimeout(r, ms));
+      const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      const sign = (path, pen, dur) => new Promise(res => {
+        const len = path.getTotalLength(), t0 = performance.now();
+        pen.setAttribute("opacity", 1);
+        (function f(now) {
+          const k = Math.min(1, (now - t0) / dur), e = ease(k), pt = path.getPointAtLength(e * len);
+          path.style.strokeDashoffset = 1 - e;
+          pen.setAttribute("transform", `translate(${pt.x} ${pt.y - 1}) rotate(${Math.sin(now / 90) * 4})`);
+          if (k < 1) requestAnimationFrame(f);
+          else { pen.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 350, fill: "forwards" }); setTimeout(() => pen.setAttribute("opacity", 0), 350); res(); }
+        })(t0);
+      });
+      const popSeal = () => { seal.setAttribute("opacity", 1); seal.animate([{ transform: "translate(318px,222px) scale(.2) rotate(-40deg)", opacity: 0 }, { transform: "translate(318px,222px) scale(1.12) rotate(6deg)", opacity: 1, offset: .7 }, { transform: "translate(318px,222px) scale(1) rotate(0)", opacity: 1 }], { duration: 650, easing: "cubic-bezier(.34,1.56,.64,1)" }); };
+      const fadeOut = () => Promise.all([s1, s2, seal].map(el => el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 700, fill: "forwards" }).finished));
+      const reset = () => { [s1, s2].forEach(s => { s.getAnimations().forEach(a => a.cancel()); s.style.strokeDashoffset = 1; }); seal.getAnimations().forEach(a => a.cancel()); seal.setAttribute("opacity", 0); };
+      (async function loop() {
+        await wait(900);
+        while (true) {
+          reset(); await wait(500);
+          await sign(s1, p1, 1900); await wait(450);
+          await sign(s2, p2, 1900); await wait(350);
+          popSeal(); await wait(4200);
+          await fadeOut();
+        }
+      })();
+    }
+  }
+
   // Schnellstart oben: Angaben ins Bewertungsformular übernehmen
   const q = document.querySelector("form[data-quick]");
   if (q) q.addEventListener("submit", e => {
