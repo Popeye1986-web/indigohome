@@ -10,19 +10,19 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css"><style>
 .ptrack{display:none}
-.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .process li{position:relative;display:flex;flex-direction:column;gap:10px;padding:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;transition:transform .45s var(--spring),box-shadow .3s,border-color .3s}
-.process li::after{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,var(--sky),var(--navy));transform:scaleX(0);transform-origin:0;transition:transform .6s var(--ease)}
-.process li:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 24px 48px -18px rgba(19,34,53,.25)}
-.process li:hover::after{transform:scaleX(1)}
-.process .pn{font-family:var(--f-head);font-weight:800;font-size:46px;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px var(--sky);transition:color .35s}
-.process li:hover .pn{color:var(--sky)}
+.process li::after{content:"";position:absolute;left:30px;top:0;height:3px;width:36px;background:var(--navy)}
+.process li:hover{border-color:#c6d5e5}
+
+.process .pn{font-family:var(--f-head);font-weight:700;font-size:15px;color:var(--sky-d);letter-spacing:.04em}
+
 .process h3{font-size:21px;letter-spacing:-.02em}
 .process p{color:var(--muted);font-size:16px}
-@media (max-width:980px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1060px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.process{grid-template-columns:minmax(0,1fr)}}
 .svcs{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:18px}
 .svc{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:36px;border-radius:28px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform .45s var(--spring),box-shadow .3s}
@@ -30,7 +30,7 @@
 .svc h3{font-size:32px}
 .svc p{color:var(--muted);max-width:30em}
 .svc .sic{width:58px;height:58px;border-radius:18px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring),background .3s}
-.svc:hover .sic{transform:rotate(-10deg) scale(1.08);background:var(--sun)}
+
 .svc .more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--navy)}
 .svc .more svg{transition:transform .35s var(--spring)}
 .svc:hover .more svg{transform:translateX(5px)}
@@ -40,31 +40,31 @@
 .svc.feat .checks li::before{background-color:rgba(255,255,255,.12);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234aa3e0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
 .svc.feat .bld{position:absolute;right:-30px;bottom:-14px;width:min(78%,360px);color:rgba(255,255,255,.1);transition:transform .8s var(--ease),color .5s}
 .svc.feat:hover .bld{transform:translate(-14px,-6px);color:rgba(74,163,224,.28)}
-.svc .tag{align-self:flex-start;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--sun);color:var(--navy-3);transform:rotate(-2deg)}
+.svc .tag{align-self:flex-start;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:8px;background:rgba(255,255,255,.12);color:#fff}
 @media (max-width:900px){.svcs{grid-template-columns:minmax(0,1fr)}.svc.feat{grid-row:auto;padding-bottom:170px}}
 .refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .ref{display:flex;flex-direction:column;gap:6px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);transition:box-shadow .3s,border-color .3s;transform-style:preserve-3d}
 .ref:hover{box-shadow:0 24px 48px -20px rgba(19,34,53,.28);border-color:#cfdeec}
 .ref .rtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.ref .ric{width:54px;height:54px;border-radius:16px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring)}
-.ref:hover .ric{transform:translateY(-4px) rotate(-8deg)}
+.ref .ric{width:50px;height:50px;border-radius:12px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring)}
+
 .ref .kt{font-family:var(--f-head);font-weight:800;font-size:13px;letter-spacing:.06em;padding:6px 10px;border-radius:10px;border:1.5px solid var(--line);color:var(--navy)}
 .ref h3{font-size:24px;letter-spacing:-.025em}
 .ref p{color:var(--muted);font-size:15.5px}
 .ref .kn{margin-top:8px;font-size:13px;font-weight:600;color:var(--sky-d)}
 @media (max-width:980px){.refs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.refs{grid-template-columns:minmax(0,1fr)}}
-.valband{background:var(--navy);color:#fff;border-radius:36px;padding:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:start;position:relative;overflow:hidden}
+.valband{background:var(--navy);color:#fff;border-radius:20px;padding:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:start;position:relative;overflow:hidden}
 .valband>.bld{position:absolute;left:-30px;bottom:-12px;width:min(46%,440px);color:rgba(255,255,255,.07)}
 .valband>*{position:relative}
 .valband>.bld{position:absolute}
 .valband h2{color:#fff;font-size:clamp(34px,4.2vw,56px)}
-.valband h2 em{color:var(--sky)}
-.valband .eyebrow{background:rgba(255,255,255,.1);color:#fff}
+
+.valband .eyebrow{color:#a9c6e4}
 .valband p.l{color:#c9d5e3;font-size:18px;margin-top:18px}
 .valband .checks{margin-top:26px;color:#e5ecf4}
 .valband .checks li::before{background-color:rgba(255,255,255,.12);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234aa3e0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
-.fcard{padding:34px;color:var(--ink);border-radius:26px}
+.fcard{padding:34px;color:var(--ink);border-radius:14px}
 .ftitle{font-size:26px;letter-spacing:-.025em}
 @media (max-width:960px){.valband{grid-template-columns:minmax(0,1fr);padding:40px 22px;border-radius:28px}}
 @media (max-width:520px){.fcard{padding:22px}}
@@ -73,26 +73,35 @@
 @media (max-width:900px){.split{grid-template-columns:minmax(0,1fr);gap:32px}}
 .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .cols3 .card{padding:32px;transition:transform .45s var(--spring),box-shadow .3s}
-.cols3 .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(19,34,53,.25)}
+
 .cols3 h3{font-size:24px;margin-bottom:18px}
 @media (max-width:900px){.cols3{grid-template-columns:minmax(0,1fr)}}
-.cta{position:relative;overflow:hidden;background:var(--ice-2);border-radius:32px;padding:56px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
-.cta::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--sun);opacity:.35}
+.cta{position:relative;overflow:hidden;background:var(--ice);border:1px solid var(--line);border-radius:18px;padding:56px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+
 .cta>*{position:relative}
 .cta h2{font-size:clamp(30px,3.4vw,44px);max-width:16em}
 .cta p{color:var(--muted);margin-top:10px;max-width:36em}
 @media (max-width:520px){.cta{padding:32px 24px}}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.mini{display:flex;align-items:center;gap:20px;padding:26px 28px;background:#fff;border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:inherit;transition:transform .45s var(--spring),box-shadow .3s}
+.mini:hover{border-color:#c6d5e5;box-shadow:0 22px 44px -20px rgba(19,34,53,.28);color:inherit}
+.mini .sic{flex:none;width:54px;height:54px;border-radius:16px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring),background .3s}
+
+.mini h3{font-size:22px}.mini p{color:var(--muted);font-size:15.5px;margin-top:4px}
+.mini .go{margin-left:auto;flex:none;width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--navy);transition:background .3s,color .3s,transform .35s var(--spring)}
+.mini:hover .go{background:var(--navy);color:#fff}
+@media (max-width:760px){.duo{grid-template-columns:minmax(0,1fr)}.mini{padding:20px}}
+.process-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
 .info{display:flex;flex-direction:column;gap:22px}
 .info .it{display:flex;gap:16px;align-items:flex-start}
 .info .ic{flex:none;width:50px;height:50px;border-radius:16px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring)}
-.info .it:hover .ic{transform:rotate(-8deg) scale(1.06)}
+
 .info small{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .info a,.info address,.info span.v{font-style:normal;font-size:18px;color:var(--ink);text-decoration:none;font-weight:500}
 .info a:hover{color:var(--sky-d)}
 </style>
 </head>
 <body>
-<div class="progress" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><img src="img/logo.png" alt="Indigo Home GmbH" width="311" height="42"></a>
@@ -101,26 +110,22 @@
       <a href="verkauf.html">Verkauf</a>
       <a href="vermietung.html">Vermietung</a>
       <a href="verwaltung.html" aria-current="page">Verwaltung</a>
-      <a href="referenzen.html">Referenzen</a>
       <a href="kontakt.html">Kontakt</a>
       <a class="btn brass" href="verkauf.html#bewertung">Kostenlose Bewertung</a>
     </nav>
   </div>
 </header>
 <main>
-  <section class="subhero"><div class="wrap"><div class="txt hin"><span class="eyebrow">Liegenschaftsverwaltung</span><h1>Bewirtschaftung von Mietliegenschaften</h1><p class="lead">Wir sind für Eigentümerschaft und Mieterschaft da, lösungsorientiert und transparent. Mit Sorgfalt kümmern wir uns um die kurz-, mittel- und langfristige Werterhaltung Ihrer Liegenschaft.</p></div><svg class="bld anim" viewBox="0 0 358 168" aria-hidden="true" style="--d:200ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg></div></section>
+  <section class="subhero"><div class="wrap"><div class="txt hin"><span class="eyebrow">Verwaltung</span><h1>Ihre Liegenschaft in guten Händen</h1><p class="lead">Administrativ, technisch und buchhalterisch, transparent und lösungsorientiert.</p></div><svg class="bld anim" viewBox="0 0 358 168" aria-hidden="true" style="--d:200ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg></div></section>
 
-  <section class="block"><div class="wrap">
-    <div class="cols3 stagger"><div class="card reveal"><h3>Administrativ</h3><ul class="checks"><li>Wiedervermietung und Prüfung von Mietinteressenten</li><li>Überprüfung der Mietzinse und Anpassungen</li><li>Korrespondenz mit Mieterschaft und Behörden</li><li>Verwaltung aller Versicherungsverträge</li></ul></div><div class="card reveal"><h3>Technisch</h3><ul class="checks"><li>Regelmässige Kontrolle des Gesamtzustands</li><li>Wohnungsübergaben und Schlussabrechnungen</li><li>Zusammenarbeit mit der Hauswartung</li><li>Prüfung von Service- und Unternehmerverträgen</li><li>Abwicklung von Versicherungsschäden</li><li>Funktionstüchtigkeit der technischen Anlagen</li></ul></div><div class="card reveal"><h3>Buchhaltung</h3><ul class="checks"><li>Inkasso von Mietzinsen und Nebenkosten-Akonto</li><li>Prüfung und Zahlung der Lieferantenrechnungen</li><li>Erstellen der Liegenschaftsrechnung</li><li>Reporting nach Absprache</li><li>Nebenkostenabrechnungen</li></ul></div></div>
-  </div></section>
-  <section class="block" style="padding-top:0"><div class="wrap split">
-    <div class="reveal"><span class="eyebrow">Offerte</span><h2 style="font-size:clamp(32px,4vw,48px);margin-top:16px">Ihre Liegenschaft in guten Händen</h2><p style="color:var(--muted);font-size:18px;margin-top:18px">Fordern Sie eine unverbindliche, individuelle Offerte für die Verwaltung Ihrer Mietliegenschaft an.</p></div>
+  <section class="block"><div class="wrap split">
+    <div class="reveal"><span class="eyebrow">Das übernehmen wir</span><ul class="checks" style="margin-top:26px;font-size:18px"><li>Wiedervermietung und Korrespondenz mit der Mieterschaft</li><li>Technische Betreuung und Kontrolle der Liegenschaft</li><li>Inkasso der Mietzinse und Zahlung der Rechnungen</li><li>Liegenschafts- und Nebenkostenabrechnungen</li><li>Wohnungsübergaben und Versicherungsfälle</li></ul>
+      <p style="margin-top:34px;color:var(--muted)">Sie möchten verkaufen? <a href="verkauf.html#bewertung">Zur kostenlosen Bewertung</a></p></div>
     <div class="reveal"><form class="form card fcard" data-form="verwaltung" data-subject="Anfrage Verwaltung" data-ok="Vielen Dank. Wir melden uns so rasch wie möglich mit einer Offerte." novalidate>
   <div><h3 class="ftitle">Offerte für die Verwaltung</h3><p class="note" style="margin-top:6px">Unverbindlich und individuell.</p></div>
-  <div class="row2"><div class="field"><label for="f-ort">PLZ und Ort der Liegenschaft *</label><input id="f-ort" name="ort" type="text" required data-msg="Bitte den Ort angeben."></div><div class="field"><label for="f-einheiten">Anzahl Wohnungen / Einheiten</label><input id="f-einheiten" name="einheiten" type="text"></div></div>
+  <div class="field"><label for="f-ort">PLZ und Ort der Liegenschaft *</label><input id="f-ort" name="ort" type="text" required data-msg="Bitte den Ort angeben."></div>
   <div class="row2"><div class="field"><label for="f-name">Name *</label><input id="f-name" name="name" type="text" required autocomplete="name" data-msg="Bitte Ihren Namen angeben."></div><div class="field"><label for="f-telefon">Telefon</label><input id="f-telefon" name="telefon" type="tel" autocomplete="tel"></div></div>
   <div class="field"><label for="f-email">E-Mail *</label><input id="f-email" name="email" type="email" required autocomplete="email" data-msg="Bitte Ihre E-Mail-Adresse angeben."></div>
-  <div class="field"><label for="f-nachricht">Bemerkungen</label><textarea id="f-nachricht" name="nachricht"></textarea></div>
   <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
   <p class="err" role="alert" hidden></p>
   <p class="ok" role="status" hidden></p>
