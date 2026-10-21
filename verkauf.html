@@ -166,6 +166,32 @@
 .info small{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .info a,.info address,.info span.v{font-style:normal;font-size:18px;color:var(--ink);text-decoration:none;font-weight:500}
 .info a:hover{color:var(--sky-d)}
+</style><style>
+.ggst{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.ggst .in{padding:34px;display:flex;flex-direction:column;gap:18px}
+.ggst .grp{display:flex;flex-direction:column;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.ggst .grp:last-of-type{border-bottom:0;padding-bottom:0}
+.ggst .gt{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-d)}
+.ggst .chf{position:relative}
+.ggst .chf input{padding-left:52px;text-align:right;font-variant-numeric:tabular-nums}
+.ggst .chf::before{content:"CHF";position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:600;color:var(--muted)}
+.ggst .out{background:var(--navy);color:#fff;padding:34px;display:flex;flex-direction:column;gap:14px}
+.ggst .out .gt{color:#a9c6e4}
+.ggst .res{font-family:var(--f-head);font-size:clamp(40px,4.4vw,56px);font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.ggst .rows{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.14)}
+.ggst .rows div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15.5px;color:#c4d2e1}
+.ggst .rows b{color:#fff;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ggst .hint{font-size:14.5px;color:#c4d2e1;background:rgba(255,255,255,.07);border-radius:10px;padding:12px 14px}
+.ggst .bars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:end;height:130px;margin-top:4px}
+.ggst .bar{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;height:100%;font-size:12.5px;color:#c4d2e1;text-align:center}
+.ggst .note{font-size:14px;color:var(--muted)}
+.ggst .bar i{display:block;flex:none;width:100%;border-radius:6px 6px 2px 2px;background:rgba(255,255,255,.22);transition:height .6s cubic-bezier(.22,1,.36,1);min-height:3px}
+.ggst .bar:first-child i{background:#4aa3e0}
+.ggst .bar b{font-size:13px;color:#fff;font-variant-numeric:tabular-nums}
+.ggst .out .btn{background:#fff;color:var(--navy);margin-top:6px;align-self:flex-start}
+.ggst .out .btn:hover{background:var(--ice);color:var(--navy)}
+.ggst .disc{font-size:13px;color:#9fb3c8}
+@media (max-width:900px){.ggst{grid-template-columns:minmax(0,1fr)}.ggst .in,.ggst .out{padding:24px}}
 </style>
 </head>
 <body>
@@ -193,7 +219,33 @@
       <div class="tl"><div class="side reveal"><span class="eyebrow">Ablauf</span><h2 id="h-p">So verkaufen wir Ihre Immobilie</h2><p>Sie können sich auf uns verlassen, von der Bewertung bis zur Beurkundung.</p></div><ol class="steps"><li class="reveal"><span class="n">01</span><div><h3>Bewertung</h3><p>Wir schätzen Ihre Immobilie ein und legen mit Ihnen den Verkaufspreis fest. Kostenlos.</p></div></li><li class="reveal"><span class="n">02</span><div><h3>Vermarktung</h3><p>Wir vermarkten Ihre Immobilie gezielt und prüfen Interessenten auf Motivation und Bonität.</p></div></li><li class="reveal"><span class="n">03</span><div><h3>Besichtigung und Verhandlung</h3><p>Wir führen die Besichtigungen und verhandeln den bestmöglichen Verkaufserlös.</p></div></li><li class="reveal"><span class="n">04</span><div><h3>Beurkundung</h3><p>Wir begleiten Sie bis zur Beurkundung und auf Wunsch bis zur Grundstückgewinnsteuer.</p></div></li></ol></div>
     </div>
   </section>
-  <section class="block" id="bewertung" aria-labelledby="h-b" style="padding-top:0">
+  <section class="block ice" id="steuerrechner" aria-labelledby="h-g">
+    <div class="wrap">
+      <div class="head reveal"><span class="eyebrow">Grundstückgewinnsteuer Kanton Thurgau</span><h2 id="h-g">Wie viel Steuer fällt beim Verkauf an?</h2><p>Rechnen Sie in einer Minute aus, welche Grundstückgewinnsteuer im Kanton Thurgau ungefähr anfällt, und wie sie sich mit der Besitzdauer verändert.</p></div>
+      <form class="ggst reveal" data-ggst novalidate onsubmit="return false">
+        <div class="in">
+          <div class="grp"><span class="gt">1 · Kauf</span><div class="row2"><div class="field"><label for="g-kauf">Kaufdatum</label><input id="g-kauf" name="kauf" type="month"></div><div class="field"><label for="g-kaufpreis">Kaufpreis</label><div class="chf"><input id="g-kaufpreis" name="kaufpreis" type="text" inputmode="numeric" autocomplete="off" placeholder="800'000"></div></div></div></div>
+          <div class="grp"><span class="gt">2 · Investitionen</span><div class="field"><label for="g-invest">Wertvermehrende Investitionen</label><div class="chf"><input id="g-invest" name="invest" type="text" inputmode="numeric" autocomplete="off" placeholder="100'000"></div></div><p class="note">Zum Beispiel Anbau, Ausbau oder neue Heizung. Reiner Unterhalt und Reparaturen zählen nicht.</p></div>
+          <div class="grp"><span class="gt">3 · Verkauf</span><div class="row2"><div class="field"><label for="g-verkauf">Verkaufsdatum</label><input id="g-verkauf" name="verkauf" type="month"></div><div class="field"><label for="g-verkaufspreis">Verkaufspreis</label><div class="chf"><input id="g-verkaufspreis" name="verkaufspreis" type="text" inputmode="numeric" autocomplete="off" placeholder="1'300'000"></div></div></div><div class="field"><label for="g-kosten">Verkaufskosten, z.B. Maklerprovision</label><div class="chf"><input id="g-kosten" name="kosten" type="text" inputmode="numeric" autocomplete="off" placeholder="30'000"></div></div></div>
+        </div>
+        <div class="out" aria-live="polite">
+          <span class="gt">Geschätzte Grundstückgewinnsteuer</span>
+          <span class="res" data-r="steuer">CHF 0</span>
+          <div class="rows">
+            <div><span>Grundstückgewinn</span><b data-r="gewinn">–</b></div>
+            <div><span>Steuer 40 %</span><b data-r="basis">–</b></div>
+            <div><span data-r="adjlabel">Besitzdauer</span><b data-r="adj">–</b></div>
+          </div>
+          <p class="hint" data-r="hint">Bitte Kaufdatum, Kaufpreis und Verkaufspreis eingeben.</p>
+          <div><span class="gt">Steuer bei späterem Verkauf</span><div class="bars" data-r="bars"></div></div>
+          <a class="btn" href="#bewertung">Verkaufspreis kostenlos schätzen lassen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="disc">Unverbindliche Schätzung nach §§ 131 bis 136 Steuergesetz Thurgau (Stand 2026), gerechnet mit vollen Besitzjahren. Nicht berücksichtigt sind Sonderfälle wie Erbschaft, Schenkung, Ersatzbeschaffung eines Eigenheims oder Steuerwert bei Besitz über 20 Jahre. Massgebend ist die Veranlagung der Steuerverwaltung.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="block" id="bewertung" aria-labelledby="h-b">
     <div class="wrap">
       <div class="valband reveal"><svg class="bld " viewBox="0 0 358 168" aria-hidden="true" style="--d:0ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg>
         <div><span class="eyebrow">Kostenlos und unverbindlich</span><h2 id="h-b" style="margin-top:18px">Bewertung anfragen</h2>

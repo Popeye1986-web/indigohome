@@ -105,6 +105,49 @@ window.KONTAKT = { telefon: "+41 44 593 76 15", email: "info@indigohome.ch" };
     }
   }
 
+  // Grundstückgewinnsteuer Thurgau (§§ 131–136 StG TG, Kantonsblatt ESTV Stand 2026)
+  // Satz 40 % des Gewinns. Unter 3 Jahren Besitz: +1 % pro fehlenden Monat.
+  // Ab 6 vollen Jahren: −4 %, für jedes weitere volle Jahr weitere −4 %, höchstens −72 %. Steuer unter CHF 50 wird nicht erhoben.
+  const gf = document.querySelector("form[data-ggst]");
+  if (gf) {
+    const num = v => { const n = parseFloat(String(v || "").replace(/['’\s]/g, "").replace(",", ".")); return isFinite(n) && n > 0 ? n : 0; };
+    const chf = n => "CHF " + Math.round(n).toLocaleString("de-CH");
+    const R = k => gf.querySelector(`[data-r="${k}"]`);
+    const now = new Date(), ym = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0");
+    gf.elements.verkauf.value = ym(now);
+    const months = (a, b) => { if (!a || !b) return null; const [y1, m1] = a.split("-").map(Number), [y2, m2] = b.split("-").map(Number); return (y2 - y1) * 12 + (m2 - m1); };
+    const factor = m => {
+      if (m < 36) return { f: 1 + (36 - m) / 100, label: "Zuschlag kurze Besitzdauer", pct: "+" + (36 - m) + " %" };
+      const y = Math.floor(m / 12);
+      if (y >= 6) { const p = Math.min(72, 4 * (y - 5)); return { f: 1 - p / 100, label: "Ermässigung " + y + " Jahre Besitz", pct: "−" + p + " %" }; }
+      return { f: 1, label: "Besitzdauer " + y + " Jahre", pct: "kein Zu- oder Abschlag" };
+    };
+    const tax = (gain, m) => { const t = gain * 0.4 * factor(m).f; return t < 50 ? 0 : t; };
+    // Tausendertrennzeichen beim Tippen
+    gf.querySelectorAll(".chf input").forEach(i => i.addEventListener("blur", () => { const n = num(i.value); i.value = n ? Math.round(n).toLocaleString("de-CH") : ""; }));
+    const calc = () => {
+      const kp = num(gf.elements.kaufpreis.value), vp = num(gf.elements.verkaufspreis.value);
+      const m = months(gf.elements.kauf.value, gf.elements.verkauf.value);
+      const gain = vp - kp - num(gf.elements.invest.value) - num(gf.elements.kosten.value);
+      const bars = R("bars");
+      if (!kp || !vp || m === null) { R("steuer").textContent = "CHF 0"; ["gewinn", "basis", "adj"].forEach(k => R(k).textContent = "–"); R("hint").textContent = "Bitte Kaufdatum, Kaufpreis und Verkaufspreis eingeben."; bars.innerHTML = ""; return; }
+      if (m < 0) { R("hint").textContent = "Das Verkaufsdatum liegt vor dem Kaufdatum."; return; }
+      const fc = factor(m);
+      R("gewinn").textContent = chf(Math.max(0, gain));
+      R("basis").textContent = chf(Math.max(0, gain) * 0.4);
+      R("adjlabel").textContent = fc.label; R("adj").textContent = fc.pct;
+      R("steuer").textContent = chf(gain > 0 ? tax(gain, m) : 0);
+      const y = Math.floor(m / 12), next = factor(m + 12).f < fc.f;
+      R("hint").textContent = gain <= 0 ? "Kein Grundstückgewinn, daher keine Grundstückgewinnsteuer."
+        : m < 36 ? "Bei weniger als 3 Jahren Besitz erhöht sich die Steuer. Ab " + 3 + " Jahren fällt der Zuschlag weg."
+        : fc.f <= 0.28 ? "Sie erhalten bereits die höchste Ermässigung von 72 %."
+        : next ? "Mit jedem weiteren vollen Besitzjahr sinkt die Steuer um 4 Prozentpunkte." : "Ab 6 vollen Besitzjahren sinkt die Steuer jedes Jahr um 4 %.";
+      const vals = [0, 12, 24, 36].map(d => gain > 0 ? tax(gain, m + d) : 0), max = Math.max(...vals, 1);
+      bars.innerHTML = vals.map((v, i) => `<div class="bar"><b>${v ? Math.round(v / 1000).toLocaleString("de-CH") + "k" : "0"}</b><i style="height:${Math.max(3, Math.round(v / max * 84))}px"></i><span>${i ? "+" + i + " Jahr" + (i > 1 ? "e" : "") : "Jetzt"}</span></div>`).join("");
+    };
+    gf.addEventListener("input", calc); gf.addEventListener("change", calc); calc();
+  }
+
   // Schnellstart oben: Angaben ins Bewertungsformular übernehmen
   const q = document.querySelector("form[data-quick]");
   if (q) q.addEventListener("submit", e => {
