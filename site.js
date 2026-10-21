@@ -68,6 +68,20 @@ window.KONTAKT = { telefon: "+41 44 593 76 15", email: "info@indigohome.ch" };
   }), { threshold: .5 }) : null;
   all("[data-count]").forEach(e => cio ? cio.observe(e) : (e.textContent = e.dataset.count));
 
+  // Schnellstart oben: Angaben ins Bewertungsformular übernehmen
+  const q = document.querySelector("form[data-quick]");
+  if (q) q.addEventListener("submit", e => {
+    e.preventDefault();
+    const target = document.querySelector('form[data-form="bewertung"]');
+    if (!target) return;
+    const art = q.elements["q-objekt"].value, ort = q.elements["q-ort"].value.trim();
+    const r = [...target.querySelectorAll('input[name="objektart"]')].find(x => x.value === art || (art === "Haus" && x.value === "Einfamilienhaus"));
+    if (r) r.checked = true;
+    if (ort && target.elements["ort"]) target.elements["ort"].value = ort;
+    document.getElementById("bewertung").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    setTimeout(() => target.elements["name"] && target.elements["name"].focus({ preventScroll: true }), 700);
+  });
+
   // Formulare: senden an /api/anfrage, sonst E-Mail-Programm öffnen
   all("form[data-form]").forEach(f => f.addEventListener("submit", async e => {
     e.preventDefault();

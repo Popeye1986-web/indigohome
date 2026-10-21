@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Immobilie verkaufen · Indigo Home GmbH</title>
+<title>Indigo Home GmbH · Immobilie verkaufen</title>
 <meta name="description" content="Indigo Home GmbH aus Tägerwilen verkauft Ihre Immobilie: kostenlose Bewertung, gezielte Vermarktung, Begleitung bis zur Beurkundung. Auch Vermietung und Verwaltung.">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="img/favicon.png" type="image/png">
@@ -12,29 +12,68 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css"><style>
-.hero{position:relative;background:linear-gradient(180deg,var(--ice) 0%,#fff 100%);border-bottom:1px solid var(--line)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center;padding-block:88px 96px}
-.hero h1{font-size:clamp(40px,5.4vw,72px);margin-top:22px;letter-spacing:-.035em}
-.hero .lead{color:var(--muted);font-size:clamp(17px,1.4vw,19.5px);max-width:32em;margin-top:24px}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.trust{display:flex;flex-wrap:wrap;gap:10px 28px;margin:36px 0 0;padding:0;list-style:none;font-size:15px;font-weight:500;color:var(--navy-3)}
-.trust li{display:flex;align-items:center;gap:8px}
-.trust svg{color:var(--sky-d)}
-.hart{position:relative;padding-bottom:40px}
-.panel{position:relative;aspect-ratio:1/.82;border-radius:18px;background:var(--navy);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:0 9% 9%}
-.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 80% 0%,rgba(74,163,224,.25),transparent 70%)}
-.panel .bld{position:relative;width:100%;color:#fff}
-.hcard{position:absolute;left:-28px;bottom:0;display:flex;flex-direction:column;gap:4px;width:min(320px,80%);padding:22px 24px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 44px -18px rgba(19,34,53,.28);text-decoration:none;color:var(--ink);transition:box-shadow .3s,transform .3s}
-.hcard:hover{transform:translateY(-3px);box-shadow:0 26px 52px -20px rgba(19,34,53,.34);color:var(--ink)}
-.hcard .hk{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-d)}
-.hcard b{font-family:var(--f-head);font-size:20px;letter-spacing:-.02em;color:var(--navy-3)}
-.hcard .hl{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-weight:600;color:var(--navy)}
-@media (prefers-reduced-motion:no-preference){.hart{animation:fadein 1s var(--ease) both .15s}@keyframes fadein{from{opacity:0;transform:translateY(16px)}}.hcard{animation:fadein .9s var(--ease) both 1.2s}}
-@media (max-width:960px){.hero .wrap{grid-template-columns:minmax(0,1fr);padding-block:48px 64px;gap:44px}.hcard{left:16px}}
-.kbar{border-bottom:1px solid var(--line);background:#fff}
-.kbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 26px;padding-block:22px;font-size:15px;color:var(--muted)}
-.kbar b{font-weight:600;color:var(--navy-3)}
-.kbar ul{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0;list-style:none}
+.hero{text-align:center;padding-top:96px;background:#fff}
+.hero .eyebrow{align-self:center}
+.hero .htxt{display:flex;flex-direction:column;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,80px);margin-top:22px;letter-spacing:-.04em;max-width:12em}
+.hero .lead{color:var(--muted);font-size:clamp(17px,1.5vw,20px);max-width:36em;margin:24px auto 0}
+.quick{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) auto;gap:10px;align-items:end;width:min(100%,860px);margin:44px auto 0;padding:12px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -28px rgba(19,34,53,.35);text-align:left}
+.quick label{display:flex;flex-direction:column;gap:4px;padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.quick label:focus-within{background:var(--ice)}
+.quick select,.quick input{font:inherit;font-size:17px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);border:0;background:transparent;padding:2px 0;outline:none;width:100%}
+.quick .btn{min-height:60px}
+.quick-note{margin-top:14px;font-size:14px;color:var(--muted)}
+.skyline{position:relative;margin-top:-40px;background:var(--navy);color:#fff;overflow:hidden}
+.skyline::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 300px at 50% 0%,rgba(74,163,224,.22),transparent 70%)}
+.skyline .wrap{position:relative;display:grid;grid-template-columns:1fr minmax(0,420px) 1fr;align-items:end;gap:40px;padding-top:110px}
+.skyline .bld{width:100%;color:#fff}
+.skyline .fact{padding-bottom:44px;text-align:left}
+.skyline .fact:last-child{text-align:right}
+.skyline .fact b{display:block;font-family:var(--f-head);font-size:clamp(40px,4.4vw,60px);letter-spacing:-.04em;line-height:1}
+.skyline .fact span{display:block;margin-top:8px;color:#b8c9dc;font-size:15px}
+.skyline .base{position:relative;border-top:1px solid rgba(255,255,255,.14)}
+.skyline .base ul{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin:0;padding:22px 20px;list-style:none;font-size:15px;color:#dbe5f0}
+.skyline .base li{display:flex;align-items:center;gap:8px}
+.skyline .base svg{color:var(--sky)}
+@media (max-width:820px){.quick{grid-template-columns:minmax(0,1fr)}.skyline .wrap{grid-template-columns:1fr 1fr;padding-top:90px}.skyline .bld{grid-column:1/-1;order:3;max-width:340px;justify-self:center}.skyline .fact{padding-bottom:0}}
+.tl{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:80px;align-items:start}
+.tl .side{position:sticky;top:150px;display:flex;flex-direction:column;gap:20px}
+.tl .side h2{font-size:clamp(34px,4vw,52px)}
+.tl .side p{color:var(--muted);font-size:18px}
+.steps{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.steps li{position:relative;display:grid;grid-template-columns:90px minmax(0,1fr);gap:8px;padding:34px 0 34px 40px;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:"";position:absolute;left:-6px;top:44px;width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid var(--navy)}
+.steps .n{font-family:var(--f-head);font-size:44px;font-weight:600;line-height:1;color:var(--sky-d);letter-spacing:-.04em}
+.steps h3{font-size:24px;letter-spacing:-.02em}
+.steps p{color:var(--muted);margin-top:8px}
+@media (max-width:900px){.tl{grid-template-columns:minmax(0,1fr);gap:36px}.tl .side{position:static}.steps li{grid-template-columns:minmax(0,1fr);padding-left:28px}}
+.ktab{width:100%;border-collapse:collapse;font-size:17px}
+.ktab th{text-align:left;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 16px 14px 0;border-bottom:2px solid var(--navy)}
+.ktab td{padding:20px 16px 20px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.ktab td:first-child{font-family:var(--f-head);font-weight:600;font-size:19px;color:var(--navy-3);width:32%}
+.ktab td:last-child{color:var(--muted)}
+.ktab tr{transition:background .2s}
+.ktab tbody tr:hover{background:var(--ice)}
+@media (max-width:700px){.ktab thead{display:none}.ktab tr{display:block;padding:16px 0;border-bottom:1px solid var(--line)}.ktab td{display:block;padding:2px 0;border:0;width:auto!important}}
+.contact-band{background:var(--navy-3);color:#fff}
+.contact-band .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
+.contact-band h2{color:#fff;font-size:clamp(34px,4vw,52px)}
+.contact-band .eyebrow{color:#a9c6e4}
+.contact-band p.l{color:#c4d2e1;font-size:18px;margin-top:18px}
+.person{margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:10px;font-size:16px;color:#c4d2e1}
+.person a{color:#fff;text-decoration:none;font-weight:600;font-size:19px}
+.person a:hover{color:var(--sky)}
+@media (max-width:900px){.contact-band .wrap{grid-template-columns:minmax(0,1fr);gap:40px}}
+.also{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.also a{display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:2px solid var(--navy);text-decoration:none;color:inherit}
+.also h3{font-size:30px;letter-spacing:-.03em}
+.also p{color:var(--muted);max-width:30em}
+.also .more{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--navy)}
+.also a:hover h3{color:var(--sky-d)}
+.also a:hover .more svg{transform:translateX(3px)}
+.also .more svg{transition:transform .25s}
+@media (max-width:760px){.also{grid-template-columns:minmax(0,1fr);gap:36px}}
 </style><style>
 .ptrack{display:none}
 .process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
@@ -127,52 +166,65 @@
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
+  <div class="wrap row1">
+    <a class="tel" data-phone-btn href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span data-phone></span></a>
     <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><img src="img/logo.png" alt="Indigo Home GmbH" width="311" height="42"></a>
-    <button class="menu" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h10"/></svg></button>
-    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+    <a class="btn brass hcta" href="index.html#bewertung">Kostenlose Bewertung</a>
+    <button class="menu" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+  </div>
+  <nav class="nav" id="nav" aria-label="Hauptnavigation"><div class="wrap">
+      <a href="index.html" aria-current="page">Startseite</a>
       <a href="verkauf.html">Verkauf</a>
       <a href="vermietung.html">Vermietung</a>
       <a href="verwaltung.html">Verwaltung</a>
       <a href="kontakt.html">Kontakt</a>
-      <a class="btn brass" href="verkauf.html#bewertung">Kostenlose Bewertung</a>
-    </nav>
-  </div>
+      <a class="btn brass mcta" href="index.html#bewertung">Kostenlose Bewertung</a>
+  </div></nav>
 </header>
 <main>
   <section class="hero" aria-labelledby="h1">
-        <div class="wrap">
+    <div class="wrap">
       <div class="htxt hin">
         <span class="eyebrow">Immobilien verkaufen</span>
         <h1 id="h1">Ihre Immobilie in <em>besten Händen.</em></h1>
         <p class="lead">Bewertung, Vermarktung und Verkauf aus einer Hand. Wir erzielen für Sie den bestmöglichen Verkaufserlös und begleiten Sie persönlich bis zur Beurkundung.</p>
-        <div class="ctas"><a class="btn brass" href="#bewertung">Kostenlose Bewertung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#verkauf">So verkaufen wir</a></div>
-        <ul class="trust"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>Kostenlose Bewertung</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>Geprüfte Kaufinteressenten</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>Begleitung bis zur Beurkundung</li></ul>
       </div>
-      <div class="hart">
-  <div class="panel" aria-hidden="true"><svg class="bld anim" viewBox="0 0 358 168" aria-hidden="true" style="--d:400ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg></div>
-  <a class="hcard" href="#bewertung"><span class="hk">Kostenlose Bewertung</span><b>Was ist Ihre Immobilie wert?</b><span class="hl">Unverbindlich anfragen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-</div>
+      <form class="quick hin" data-quick action="#bewertung" aria-label="Schnellstart Bewertung">
+        <label>Objektart<select name="q-objekt"><option>Wohnung</option><option>Haus</option><option>Mehrfamilienhaus</option><option>Bauland</option><option>Gewerbe</option></select></label>
+        <label>PLZ und Ort<input name="q-ort" type="text" placeholder="z.B. 8274 Tägerwilen" autocomplete="postal-code"></label>
+        <button class="btn brass" type="submit">Bewertung anfragen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+    <div class="skyline" aria-label="Indigo Home in Zahlen">
+      <div class="wrap">
+        <div class="fact reveal"><b data-count="9">9</b><span>Referenzliegenschaften</span></div>
+        <svg class="bld anim" viewBox="0 0 358 168" aria-hidden="true" style="--d:300ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg>
+        <div class="fact reveal"><b data-count="7">7</b><span>Kantone</span></div>
+      </div>
+      <div class="base"><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>Kostenlose Bewertung</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>Geprüfte Kaufinteressenten</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>Begleitung bis zur Beurkundung</li></ul></div>
     </div>
   </section>
-
-  <div class="kbar"><div class="wrap"><b>Tätig in sieben Kantonen</b><ul><li>Thurgau</li><li>Zürich</li><li>St. Gallen</li><li>Appenzell Ausserrhoden</li><li>Aargau</li><li>Solothurn</li><li>Bern</li></ul></div></div>
 
   <section class="block" id="verkauf" aria-labelledby="h-v">
-    <div class="wrap">
-      <div class="head reveal"><span class="eyebrow">Verkauf und Vermarktung</span><h2 id="h-v">So verkaufen wir Ihre Immobilie</h2></div>
-      <ol class="process stagger"><li class="reveal"><span class="pn">01</span><h3>Bewertung</h3><p>Wir schätzen Ihre Immobilie ein und legen mit Ihnen den Verkaufspreis fest. Kostenlos.</p></li><li class="reveal"><span class="pn">02</span><h3>Vermarktung</h3><p>Wir vermarkten Ihre Immobilie gezielt und prüfen Interessenten auf Motivation und Bonität.</p></li><li class="reveal"><span class="pn">03</span><h3>Besichtigung und Verhandlung</h3><p>Wir führen die Besichtigungen und verhandeln den bestmöglichen Verkaufserlös.</p></li><li class="reveal"><span class="pn">04</span><h3>Beurkundung</h3><p>Wir begleiten Sie bis zur Beurkundung und auf Wunsch bis zur Grundstückgewinnsteuer.</p></li></ol>
-      <div class="process-cta reveal"><a class="btn brass" href="#bewertung">Jetzt kostenlos bewerten lassen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn line" href="verkauf.html">Mehr zum Verkauf</a></div>
+    <div class="wrap tl">
+      <div class="side reveal"><span class="eyebrow">Verkauf und Vermarktung</span><h2 id="h-v">So verkaufen wir Ihre Immobilie</h2><p>Mit unserer Marktkenntnis erzielen Sie den bestmöglichen Verkaufserlös, ohne sich um die Details kümmern zu müssen.</p><div><a class="btn brass" href="#bewertung">Kostenlose Bewertung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+      <ol class="steps"><li class="reveal"><span class="n">01</span><div><h3>Bewertung</h3><p>Wir schätzen Ihre Immobilie ein und legen mit Ihnen den Verkaufspreis fest. Kostenlos.</p></div></li><li class="reveal"><span class="n">02</span><div><h3>Vermarktung</h3><p>Wir vermarkten Ihre Immobilie gezielt und prüfen Interessenten auf Motivation und Bonität.</p></div></li><li class="reveal"><span class="n">03</span><div><h3>Besichtigung und Verhandlung</h3><p>Wir führen die Besichtigungen und verhandeln den bestmöglichen Verkaufserlös.</p></div></li><li class="reveal"><span class="n">04</span><div><h3>Beurkundung</h3><p>Wir begleiten Sie bis zur Beurkundung und auf Wunsch bis zur Grundstückgewinnsteuer.</p></div></li></ol>
     </div>
   </section>
 
-  <section class="block" id="bewertung" aria-labelledby="h-b" style="padding-top:0">
+  <section class="block ice" aria-labelledby="h-r">
+    <div class="wrap tl">
+      <div class="side reveal"><span class="eyebrow">Referenzen</span><h2 id="h-r">Erfahrung in sieben Kantonen</h2><p>Wohn-, Gewerbe- und gemischte Liegenschaften, für die wir tätig sind und waren.</p><div><a class="btn line" href="referenzen.html">Alle Referenzen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+      <table class="ktab reveal"><thead><tr><th scope="col">Kanton</th><th scope="col">Referenzliegenschaften in</th></tr></thead><tbody><tr><td>Thurgau</td><td>Tägerwilen, Matzingen</td></tr><tr><td>Zürich</td><td>Egg bei Zürich</td></tr><tr><td>St. Gallen</td><td>Goldach, Bazenheid</td></tr><tr><td>Appenzell Ausserrhoden</td><td>Walzenhausen</td></tr><tr><td>Aargau</td><td>Rudolfstetten</td></tr><tr><td>Solothurn</td><td>Olten</td></tr><tr><td>Bern</td><td>Thun</td></tr></tbody></table>
+    </div>
+  </section>
+
+  <section class="block contact-band" id="bewertung" aria-labelledby="h-b">
     <div class="wrap">
-      <div class="valband reveal"><svg class="bld " viewBox="0 0 358 168" aria-hidden="true" style="--d:0ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg>
-        <div><span class="eyebrow">Kostenlos und unverbindlich</span><h2 id="h-b" style="margin-top:18px">Was ist Ihre Immobilie wert?</h2>
-          <p class="l">Ein paar Angaben genügen. Wir melden uns so rasch wie möglich.</p>
-          <ul class="checks"><li>Persönliche Einschätzung</li><li>Vertraulich und ohne Verpflichtung</li><li>Klare Empfehlung zum Verkaufspreis</li></ul></div>
-        <form class="form card fcard" data-form="bewertung" data-subject="Bewertungsanfrage" data-ok="Vielen Dank. Wir melden uns so rasch wie möglich für Ihre kostenlose Bewertung." novalidate>
+      <div class="reveal"><span class="eyebrow">Kostenlos und unverbindlich</span><h2 id="h-b" style="margin-top:18px">Was ist Ihre Immobilie wert?</h2>
+        <p class="l">Ein paar Angaben genügen. Wir melden uns so rasch wie möglich und besprechen mit Ihnen das weitere Vorgehen.</p>
+        <div class="person"><span>Lieber persönlich?</span><a data-phone href="#"></a><a data-email href="#"></a><span>Hauptstrasse 15, 8274 Tägerwilen</span></div></div>
+      <div class="reveal"><form class="form card fcard" data-form="bewertung" data-subject="Bewertungsanfrage" data-ok="Vielen Dank. Wir melden uns so rasch wie möglich für Ihre kostenlose Bewertung." novalidate>
   <div><h3 class="ftitle">Kostenlose Bewertung anfragen</h3><p class="note" style="margin-top:6px">Unverbindlich und vertraulich. Wir melden uns so rasch wie möglich.</p></div>
   <div class="field"><span class="lab" id="l-objektart">Objektart</span><div class="seg" role="radiogroup" aria-labelledby="l-objektart"><label><input type="radio" name="objektart" value="Wohnung" data-msg="Bitte objektart wählen."><span>Wohnung</span></label><label><input type="radio" name="objektart" value="Haus" data-msg="Bitte objektart wählen."><span>Haus</span></label><label><input type="radio" name="objektart" value="Mehrfamilienhaus" data-msg="Bitte objektart wählen."><span>Mehrfamilienhaus</span></label><label><input type="radio" name="objektart" value="Bauland" data-msg="Bitte objektart wählen."><span>Bauland</span></label><label><input type="radio" name="objektart" value="Gewerbe" data-msg="Bitte objektart wählen."><span>Gewerbe</span></label></div></div>
   <div class="field"><label for="f-ort">PLZ und Ort der Liegenschaft *</label><input id="f-ort" name="ort" type="text" required placeholder="z.B. 8274 Tägerwilen" data-msg="Bitte den Ort der Liegenschaft angeben."></div>
@@ -183,31 +235,30 @@
   <p class="ok" role="status" hidden></p>
   <button class="btn brass" type="submit">Bewertung anfragen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
   <p class="note">Ihre Angaben verwenden wir nur für Ihre Anfrage und geben sie nicht an Dritte weiter.</p>
-</form>
-      </div>
+</form></div>
     </div>
   </section>
 
-  <section class="block ice" aria-labelledby="h-a">
+  <section class="block" aria-labelledby="h-a">
     <div class="wrap">
-      <div class="head reveal" style="margin-bottom:36px"><span class="eyebrow">Ausserdem für Sie da</span><h2 id="h-a" style="font-size:clamp(28px,3.4vw,42px)">Vermietung und Verwaltung</h2></div>
-      <div class="duo stagger"><a class="mini reveal" href="vermietung.html"><span class="sic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7a4 4 0 1 1-3.9 4.9L4 19v2h3v-2h2v-2h2l1.1-1.1A4 4 0 0 1 15 7z"/><circle cx="16" cy="10" r="1"/></svg></span><div><h3>Vermietung</h3><p>Wir finden die passenden Mieter, von der Werbung bis zur Übergabe.</p></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="mini reveal" href="verwaltung.html"><span class="sic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><div><h3>Verwaltung</h3><p>Wir bewirtschaften Ihre Mietliegenschaft, transparent und zuverlässig.</p></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <div class="head reveal" style="margin-bottom:44px"><span class="eyebrow">Ausserdem für Sie da</span><h2 id="h-a" style="font-size:clamp(28px,3.4vw,42px)">Vermietung und Verwaltung</h2></div>
+      <div class="also stagger">
+        <a class="reveal" href="vermietung.html"><h3>Vermietung</h3><p>Wir finden die passenden Mieterinnen und Mieter für Wohnungen, Häuser, Büros und Bauprojekte, von der Werbung bis zur Übergabe.</p><span class="more">Zur Vermietung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="reveal" href="verwaltung.html"><h3>Verwaltung</h3><p>Wir bewirtschaften Ihre Mietliegenschaft administrativ, technisch und buchhalterisch, transparent und zuverlässig.</p><span class="more">Zur Verwaltung <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
     </div>
   </section>
 
 </main>
 <footer>
-  <svg class="bld deco" viewBox="0 0 358 168" aria-hidden="true" style="--d:0ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg>
   <div class="wrap">
-    <div>
-      <a class="brand" href="index.html" aria-label="Indigo Home GmbH"><img src="img/logo-weiss.png" alt="Indigo Home GmbH" width="370" height="50" loading="lazy"></a>
-      <p style="margin-top:18px;max-width:28em">Wir verwalten, vermieten und verkaufen Immobilien. Persönlich, transparent und lösungsorientiert.</p>
-      <div class="social"><a href="https://www.facebook.com/Indigo-Home-GmbH-Immobilien-112406141284418/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V11H7v4h3v9h4v-9h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a><a href="https://www.instagram.com/indigohomegmbh/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
-    </div>
-    <div><h3>Leistungen</h3><p><a href="verkauf.html">Verkauf</a><br><a href="vermietung.html">Vermietung</a><br><a href="verwaltung.html">Verwaltung</a><br><a href="referenzen.html">Referenzen</a></p></div>
-    <div><h3>Kontakt</h3><address>Indigo Home GmbH<br>Hauptstrasse 15<br>8274 Tägerwilen</address><p><a data-phone href="#"></a><br><a data-email href="#"></a></p></div>
+    <div class="fbrand"><a class="brand" href="index.html" aria-label="Indigo Home GmbH"><img src="img/logo.png" alt="Indigo Home GmbH" width="311" height="42" loading="lazy"></a>
+      <p>Verkauf, Vermietung und Verwaltung von Immobilien. Persönlich, transparent und lösungsorientiert.</p></div>
+    <div><h3>Adresse</h3><address>Indigo Home GmbH<br>Hauptstrasse 15<br>8274 Tägerwilen</address></div>
+    <div><h3>Kontakt</h3><p><a data-phone href="#"></a><br><a data-email href="#"></a></p>
+      <div class="social"><a href="https://www.facebook.com/Indigo-Home-GmbH-Immobilien-112406141284418/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V11H7v4h3v9h4v-9h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a><a href="https://www.instagram.com/indigohomegmbh/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div></div>
     <div><h3>Bürozeiten</h3><p>Montag bis Freitag<br>08.30–12.00 Uhr<br>13.30–17.00 Uhr</p></div>
-    <div class="legal"><span>© <span id="yr">2026</span> Indigo Home GmbH</span><span><a href="impressum.html">Impressum und Datenschutz</a></span></div>
+    <div class="legal"><span>© <span id="yr">2026</span> Indigo Home GmbH</span><span><a href="verkauf.html">Verkauf</a> · <a href="vermietung.html">Vermietung</a> · <a href="verwaltung.html">Verwaltung</a> · <a href="referenzen.html">Referenzen</a> · <a href="impressum.html">Impressum und Datenschutz</a></span></div>
   </div>
 </footer>
 <script src="site.js"></script>

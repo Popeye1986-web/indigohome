@@ -47,31 +47,37 @@ p{margin:0}
 /* Lesefortschritt */
 .progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:40;background:linear-gradient(90deg,var(--sky),var(--navy));transform-origin:0 50%;transform:scaleX(var(--p,0));pointer-events:none}
 
-/* Kopf */
-.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:80px}
+/* Kopf: Logo in der Mitte, Menü darunter */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
 .top.scrolled{box-shadow:0 6px 20px -12px rgba(19,34,53,.2)}
+.top .row1{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;min-height:84px}
+.top .tel{justify-self:start;display:inline-flex;align-items:center;gap:10px;color:var(--navy-3);text-decoration:none;font-weight:600;font-size:15px}
+.top .tel svg{color:var(--sky-d)}
+.top .tel:hover{color:var(--sky-d)}
+.top .hcta{justify-self:end;min-height:46px;padding:0 20px;font-size:15px}
 .brand{display:flex;align-items:center;text-decoration:none}
-.brand img{display:block;height:42px;width:auto}
-footer .brand img{height:50px}
-@media (max-width:420px){.brand img{height:34px}}
-.nav{display:flex;align-items:center;gap:2px}
-.nav a{position:relative;color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;padding:10px 14px;transition:color .2s}
+.brand img{display:block;height:44px;width:auto}
+.nav{border-top:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:center;gap:6px}
+.nav a{position:relative;color:var(--ink);text-decoration:none;font-weight:500;font-size:14.5px;letter-spacing:.02em;padding:14px 16px;transition:color .2s}
 .nav a:not(.btn):hover{color:var(--sky-d)}
 .nav a[aria-current="page"]{color:var(--navy);font-weight:600}
-.nav a[aria-current="page"]::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:var(--navy)}
-.nav .btn{min-height:46px;padding:0 20px;margin-left:10px;font-size:15px}
-.menu{display:none;background:none;border:1px solid var(--line);color:var(--navy);width:46px;height:46px;border-radius:10px;cursor:pointer}
+.nav a[aria-current="page"]::after{content:"";position:absolute;left:16px;right:16px;bottom:-1px;height:2px;background:var(--navy)}
+.nav .mcta{display:none}
+.menu{display:none;justify-self:end;background:none;border:1px solid var(--line);color:var(--navy);width:46px;height:46px;border-radius:10px;cursor:pointer}
 @media (max-width:960px){
-  .top .wrap{position:relative;min-height:70px}
+  .top .row1{grid-template-columns:1fr auto;min-height:70px}
+  .top .tel,.top .hcta{display:none}
+  .brand{justify-self:start}
+  .brand img{height:36px}
   .menu{display:grid;place-items:center}
-  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 20px;background:#fff;border-bottom:1px solid var(--line);display:none;box-shadow:0 24px 50px -16px rgba(19,34,53,.25)}
-  .nav.open{display:flex;animation:drop .35s var(--ease)}
-  @keyframes drop{from{opacity:0;transform:translateY(-8px)}}
-  .nav a{padding:14px 8px;border-bottom:1px solid var(--line);border-radius:0}
-  .nav a:not(.btn):hover{background:none}
+  .nav{display:none;border-top:1px solid var(--line)}
+  .nav.open{display:block;animation:drop .3s var(--ease)}
+  @keyframes drop{from{opacity:0;transform:translateY(-6px)}}
+  .nav .wrap{flex-direction:column;align-items:stretch;gap:0;padding-block:6px 20px}
+  .nav a{padding:14px 2px;border-bottom:1px solid var(--line)}
   .nav a[aria-current="page"]::after{display:none}
-  .nav .btn{margin:16px 0 0;border-bottom:0}
+  .nav .mcta{display:inline-flex;margin-top:16px;border-bottom:0}
 }
 
 /* Abschnitte */
@@ -127,19 +133,22 @@ section.block.ice{background:var(--ice)}
 .form .ok{background:#e9f7ef;color:#17663d;border-radius:14px;padding:14px 16px;font-weight:600}
 .form .note{font-size:13.5px;color:var(--muted)}
 
-/* Fuss */
-footer{position:relative;overflow:hidden;background:var(--navy-3);color:#b8c6d6;font-size:15px}
-footer .deco{position:absolute;right:-40px;bottom:-20px;width:440px;color:rgba(255,255,255,.045);pointer-events:none}
-footer .wrap{position:relative;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-block:80px 32px}
-footer h3{color:#fff;font-family:var(--f);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
-footer a{color:#e5ecf4;text-decoration:none}
-footer a:hover{color:var(--sky)}
+/* Fuss: hell und ruhig */
+footer{background:var(--ice);color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-block:72px 28px}
+footer .fbrand p{margin-top:18px;max-width:26em;line-height:1.7}
+footer .brand img{height:42px}
+footer h3{color:var(--navy-3);font-family:var(--f);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+footer a{color:var(--navy-3);text-decoration:none}
+footer a:hover{color:var(--sky-d)}
 footer address{font-style:normal;line-height:1.8}
 footer p{line-height:1.8}
-footer .legal{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;border-top:1px solid rgba(255,255,255,.1);padding-top:24px;font-size:14px;color:#8ea2b9}
-footer .social{display:flex;gap:10px;margin-top:20px}
-footer .social a{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.07);display:grid;place-items:center;transition:background .2s,transform .35s var(--spring)}
-footer .social a:hover{background:rgba(255,255,255,.16);color:#fff}
+footer .legal{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;border-top:1px solid var(--line);padding-top:24px;font-size:14px}
+footer .legal a{color:var(--muted)}
+footer .legal a:hover{color:var(--navy)}
+footer .social{display:flex;gap:8px;margin-top:16px}
+footer .social a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;color:var(--navy)}
+footer .social a:hover{border-color:var(--navy)}
 @media (max-width:900px){footer .wrap{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){footer .wrap{grid-template-columns:1fr}}
 
