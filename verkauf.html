@@ -12,12 +12,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css"><style>
-.hero{text-align:center;padding-top:96px;background:#fff}
-.hero .eyebrow{align-self:center}
-.hero .htxt{display:flex;flex-direction:column;align-items:center}
-.hero h1{font-size:clamp(40px,6vw,80px);margin-top:22px;letter-spacing:-.04em;max-width:12em}
-.hero .lead{color:var(--muted);font-size:clamp(17px,1.5vw,20px);max-width:36em;margin:24px auto 0}
-.quick{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) auto;gap:10px;align-items:end;width:min(100%,860px);margin:44px auto 0;padding:12px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -28px rgba(19,34,53,.35);text-align:left}
+.hero{padding-top:72px;background:linear-gradient(180deg,var(--ice) 0%,#fff 70%);overflow:hidden}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center}
+.hero .htxt{display:flex;flex-direction:column;align-items:flex-start}
+.hero h1{font-size:clamp(40px,5.6vw,76px);margin-top:22px;letter-spacing:-.04em;max-width:11em}
+.hero .lead{color:var(--muted);font-size:clamp(17px,1.4vw,19.5px);max-width:32em;margin-top:24px}
+.hcon{position:relative;justify-self:center;width:min(100%,430px);transform:rotate(5deg);transform-origin:50% 60%}
+.hcon .contract{display:block;width:100%;height:auto;overflow:visible}
+@media (prefers-reduced-motion:no-preference){.hcon{animation:lay 1.2s cubic-bezier(.22,1,.36,1) both .2s}@keyframes lay{from{opacity:0;transform:rotate(14deg) translate(40px,30px)}to{opacity:1;transform:rotate(5deg)}}}
+@media (max-width:900px){.hgrid{grid-template-columns:minmax(0,1fr);gap:28px}.hcon{width:min(88%,360px);transform:rotate(4deg)}}
+.quick{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) auto;gap:10px;align-items:end;width:min(100%,860px);margin:40px 0 0;padding:12px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -28px rgba(19,34,53,.35);text-align:left}
 .quick label{display:flex;flex-direction:column;gap:4px;padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .quick label:focus-within{background:var(--ice)}
 .quick select,.quick input{font:inherit;font-size:17px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);border:0;background:transparent;padding:2px 0;outline:none;width:100%}
@@ -25,8 +29,8 @@
 .quick-note{margin-top:14px;font-size:14px;color:var(--muted)}
 .skyline{position:relative;margin-top:-40px;background:var(--navy);color:#fff;overflow:hidden}
 .skyline::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 300px at 50% 0%,rgba(74,163,224,.22),transparent 70%)}
-.skyline .wrap{position:relative;display:grid;grid-template-columns:1fr minmax(0,420px) 1fr;align-items:end;gap:40px;padding-top:80px}
-.skyline .contract{display:block;width:100%;height:auto}
+.skyline .wrap{position:relative;display:grid;grid-template-columns:1fr minmax(0,420px) 1fr;align-items:end;gap:40px;padding-top:110px}
+.skyline .bld{width:100%;color:#fff}
 .skyline .fact{padding-bottom:44px;text-align:left}
 .skyline .fact:last-child{text-align:right}
 .skyline .fact b{display:block;font-family:var(--f-head);font-size:clamp(40px,4.4vw,60px);letter-spacing:-.04em;line-height:1}
@@ -35,7 +39,7 @@
 .skyline .base ul{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin:0;padding:22px 20px;list-style:none;font-size:15px;color:#dbe5f0}
 .skyline .base li{display:flex;align-items:center;gap:8px}
 .skyline .base svg{color:var(--sky)}
-@media (max-width:820px){.quick{grid-template-columns:minmax(0,1fr)}.skyline .wrap{grid-template-columns:1fr 1fr;padding-top:90px}.skyline .contract{grid-column:1/-1;order:3;max-width:360px;justify-self:center}.skyline .fact{padding-bottom:0}}
+@media (max-width:820px){.quick{grid-template-columns:minmax(0,1fr)}.skyline .wrap{grid-template-columns:1fr 1fr;padding-top:90px}.skyline .bld{grid-column:1/-1;order:3;max-width:320px;justify-self:center}.skyline .fact{padding-bottom:0}}
 .tl{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:80px;align-items:start}
 .tl .side{position:sticky;top:150px;display:flex;flex-direction:column;gap:20px}
 .tl .side h2{font-size:clamp(34px,4vw,52px)}
