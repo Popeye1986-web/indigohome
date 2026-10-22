@@ -3,236 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Immobilie verkaufen · Indigo Home GmbH</title>
+<title>Verkauf · Indigo Home GmbH</title>
 <meta name="description" content="Immobilie verkaufen mit Indigo Home: kostenlose Bewertung, gezielte Vermarktung, Besichtigungen, Verhandlungen und Beurkundung.">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css"><style>
-.hero{padding-top:72px;background:linear-gradient(180deg,var(--ice) 0%,#fff 70%);overflow:hidden}
-.hgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center}
-.hero .htxt{display:flex;flex-direction:column;align-items:flex-start}
-.hero h1{font-size:clamp(40px,5.6vw,76px);margin-top:22px;letter-spacing:-.04em;max-width:11em}
-.hero .lead{color:var(--muted);font-size:clamp(17px,1.4vw,19.5px);max-width:32em;margin-top:24px}
-.hcon{position:relative;justify-self:center;width:min(100%,430px);transform:rotate(5deg);transform-origin:50% 60%}
-.hcon .contract{display:block;width:100%;height:auto;overflow:visible}
-@media (prefers-reduced-motion:no-preference){.hcon{animation:lay 1.2s cubic-bezier(.22,1,.36,1) both .2s}@keyframes lay{from{opacity:0;transform:rotate(14deg) translate(40px,30px)}to{opacity:1;transform:rotate(5deg)}}}
-@media (max-width:900px){.hgrid{grid-template-columns:minmax(0,1fr);gap:28px}.hcon{width:min(88%,360px);transform:rotate(4deg)}}
-.quick{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) auto;gap:10px;align-items:end;width:min(100%,860px);margin:40px 0 0;padding:12px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -28px rgba(19,34,53,.35);text-align:left}
-.quick label{display:flex;flex-direction:column;gap:4px;padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.quick label:focus-within{background:var(--ice)}
-.quick select,.quick input{font:inherit;font-size:17px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);border:0;background:transparent;padding:2px 0;outline:none;width:100%}
-.quick .btn{min-height:60px}
-.quick-note{margin-top:14px;font-size:14px;color:var(--muted)}
-.skyline{position:relative;margin-top:-40px;background:var(--navy);color:#fff;overflow:hidden}
-.skyline::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 300px at 50% 0%,rgba(74,163,224,.22),transparent 70%)}
-.skyline .wrap{position:relative;display:grid;grid-template-columns:1fr minmax(0,420px) 1fr;align-items:end;gap:40px;padding-top:110px}
-.skyline .bld{width:100%;color:#fff}
-.skyline .fact{padding-bottom:44px;text-align:left}
-.skyline .fact:last-child{text-align:right}
-.skyline .fact b{display:block;font-family:var(--f-head);font-size:clamp(40px,4.4vw,60px);letter-spacing:-.04em;line-height:1}
-.skyline .fact span{display:block;margin-top:8px;color:#b8c9dc;font-size:15px}
-.skyline .base{position:relative;border-top:1px solid rgba(255,255,255,.14)}
-.skyline .base ul{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin:0;padding:22px 20px;list-style:none;font-size:15px;color:#dbe5f0}
-.skyline .base li{display:flex;align-items:center;gap:8px}
-.skyline .base svg{color:var(--sky)}
-@media (max-width:820px){.quick{grid-template-columns:minmax(0,1fr)}.skyline .wrap{grid-template-columns:1fr 1fr;padding-top:90px}.skyline .bld{grid-column:1/-1;order:3;max-width:320px;justify-self:center}.skyline .fact{padding-bottom:0}}
-.tl{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:80px;align-items:start}
-.tl .side{position:sticky;top:150px;display:flex;flex-direction:column;gap:20px}
-.tl .side h2{font-size:clamp(34px,4vw,52px)}
-.tl .side p{color:var(--muted);font-size:18px}
-.steps{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
-.steps li{position:relative;display:grid;grid-template-columns:90px minmax(0,1fr);gap:8px;padding:34px 0 34px 40px;border-bottom:1px solid var(--line)}
-.steps li:last-child{border-bottom:0}
-.steps li::before{content:"";position:absolute;left:-6px;top:44px;width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid var(--navy)}
-.steps .n{font-family:var(--f-head);font-size:44px;font-weight:600;line-height:1;color:var(--sky-d);letter-spacing:-.04em}
-.steps h3{font-size:24px;letter-spacing:-.02em}
-.steps p{color:var(--muted);margin-top:8px}
-@media (max-width:900px){.tl{grid-template-columns:minmax(0,1fr);gap:36px}.tl .side{position:static}.steps li{grid-template-columns:minmax(0,1fr);padding-left:28px}}
-.ktab{width:100%;border-collapse:collapse;font-size:17px}
-.ktab th{text-align:left;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 16px 14px 0;border-bottom:2px solid var(--navy)}
-.ktab td{padding:20px 16px 20px 0;border-bottom:1px solid var(--line);vertical-align:top}
-.ktab td:first-child{font-family:var(--f-head);font-weight:600;font-size:19px;color:var(--navy-3);width:32%}
-.ktab td:last-child{color:var(--muted)}
-.ktab tr{transition:background .2s}
-.ktab tbody tr:hover{background:var(--ice)}
-@media (max-width:700px){.ktab thead{display:none}.ktab tr{display:block;padding:16px 0;border-bottom:1px solid var(--line)}.ktab td{display:block;padding:2px 0;border:0;width:auto!important}}
-.contact-band{background:var(--navy-3);color:#fff}
-.contact-band .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
-.contact-band h2{color:#fff;font-size:clamp(34px,4vw,52px)}
-.contact-band .eyebrow{color:#a9c6e4}
-.contact-band p.l{color:#c4d2e1;font-size:18px;margin-top:18px}
-.person{margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:10px;font-size:16px;color:#c4d2e1}
-.person a{color:#fff;text-decoration:none;font-weight:600;font-size:19px}
-.person a:hover{color:var(--sky)}
-@media (max-width:900px){.contact-band .wrap{grid-template-columns:minmax(0,1fr);gap:40px}}
-.also{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
-.also a{display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:2px solid var(--navy);text-decoration:none;color:inherit}
-.also h3{font-size:30px;letter-spacing:-.03em}
-.also p{color:var(--muted);max-width:30em}
-.also .more{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--navy)}
-.also a:hover h3{color:var(--sky-d)}
-.also a:hover .more svg{transform:translateX(3px)}
-.also .more svg{transition:transform .25s}
-@media (max-width:760px){.also{grid-template-columns:minmax(0,1fr);gap:36px}}
-</style><style>
-.ptrack{display:none}
-.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.process li{position:relative;display:flex;flex-direction:column;gap:10px;padding:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;transition:transform .45s var(--spring),box-shadow .3s,border-color .3s}
-.process li::after{content:"";position:absolute;left:30px;top:0;height:3px;width:36px;background:var(--navy)}
-.process li:hover{border-color:#c6d5e5}
-
-.process .pn{font-family:var(--f-head);font-weight:700;font-size:15px;color:var(--sky-d);letter-spacing:.04em}
-
-.process h3{font-size:21px;letter-spacing:-.02em}
-.process p{color:var(--muted);font-size:16px}
-@media (max-width:1060px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:620px){.process{grid-template-columns:minmax(0,1fr)}}
-.svcs{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:18px}
-.svc{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:36px;border-radius:28px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform .45s var(--spring),box-shadow .3s}
-.svc:hover{transform:translateY(-6px);box-shadow:0 28px 56px -22px rgba(19,34,53,.3);color:inherit}
-.svc h3{font-size:32px}
-.svc p{color:var(--muted);max-width:30em}
-.svc .sic{width:58px;height:58px;border-radius:18px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring),background .3s}
-
-.svc .more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--navy)}
-.svc .more svg{transition:transform .35s var(--spring)}
-.svc:hover .more svg{transform:translateX(5px)}
-.svc.feat{grid-row:span 2;background:var(--navy);border-color:var(--navy);color:#fff;padding-bottom:200px}
-.svc.feat h3{color:#fff;font-size:44px}.svc.feat p{color:#c9d5e3}.svc.feat .more{color:#fff}
-.svc.feat .checks{color:#e5ecf4}
-.svc.feat .checks li::before{background-color:rgba(255,255,255,.12);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234aa3e0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
-.svc.feat .bld{position:absolute;right:-30px;bottom:-14px;width:min(78%,360px);color:rgba(255,255,255,.1);transition:transform .8s var(--ease),color .5s}
-.svc.feat:hover .bld{transform:translate(-14px,-6px);color:rgba(74,163,224,.28)}
-.svc .tag{align-self:flex-start;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:8px;background:rgba(255,255,255,.12);color:#fff}
-@media (max-width:900px){.svcs{grid-template-columns:minmax(0,1fr)}.svc.feat{grid-row:auto;padding-bottom:170px}}
-.refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ref{display:flex;flex-direction:column;gap:6px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);transition:box-shadow .3s,border-color .3s;transform-style:preserve-3d}
-.ref:hover{box-shadow:0 24px 48px -20px rgba(19,34,53,.28);border-color:#cfdeec}
-.ref .rtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.ref .ric{width:50px;height:50px;border-radius:12px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring)}
-
-.ref .kt{font-family:var(--f-head);font-weight:800;font-size:13px;letter-spacing:.06em;padding:6px 10px;border-radius:10px;border:1.5px solid var(--line);color:var(--navy)}
-.ref h3{font-size:24px;letter-spacing:-.025em}
-.ref p{color:var(--muted);font-size:15.5px}
-.ref .kn{margin-top:8px;font-size:13px;font-weight:600;color:var(--sky-d)}
-@media (max-width:980px){.refs{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:620px){.refs{grid-template-columns:minmax(0,1fr)}}
-.valband{background:var(--navy);color:#fff;border-radius:20px;padding:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:start;position:relative;overflow:hidden}
-.valband>.bld{position:absolute;left:-30px;bottom:-12px;width:min(46%,440px);color:rgba(255,255,255,.07)}
-.valband>*{position:relative}
-.valband>.bld{position:absolute}
-.valband h2{color:#fff;font-size:clamp(34px,4.2vw,56px)}
-
-.valband .eyebrow{color:#a9c6e4}
-.valband p.l{color:#c9d5e3;font-size:18px;margin-top:18px}
-.valband .checks{margin-top:26px;color:#e5ecf4}
-.valband .checks li::before{background-color:rgba(255,255,255,.12);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234aa3e0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
-.fcard{padding:34px;color:var(--ink);border-radius:14px}
-.ftitle{font-size:26px;letter-spacing:-.025em}
-@media (max-width:960px){.valband{grid-template-columns:minmax(0,1fr);padding:40px 22px;border-radius:28px}}
-@media (max-width:520px){.fcard{padding:22px}}
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
-.split h2{font-size:clamp(32px,4vw,50px)!important}
-@media (max-width:900px){.split{grid-template-columns:minmax(0,1fr);gap:32px}}
-.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.cols3 .card{padding:32px;transition:transform .45s var(--spring),box-shadow .3s}
-
-.cols3 h3{font-size:24px;margin-bottom:18px}
-@media (max-width:900px){.cols3{grid-template-columns:minmax(0,1fr)}}
-.cta{position:relative;overflow:hidden;background:var(--ice);border:1px solid var(--line);border-radius:18px;padding:56px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
-
-.cta>*{position:relative}
-.cta h2{font-size:clamp(30px,3.4vw,44px);max-width:16em}
-.cta p{color:var(--muted);margin-top:10px;max-width:36em}
-@media (max-width:520px){.cta{padding:32px 24px}}
-.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.mini{display:flex;align-items:center;gap:20px;padding:26px 28px;background:#fff;border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:inherit;transition:transform .45s var(--spring),box-shadow .3s}
-.mini:hover{border-color:#c6d5e5;box-shadow:0 22px 44px -20px rgba(19,34,53,.28);color:inherit}
-.mini .sic{flex:none;width:54px;height:54px;border-radius:16px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring),background .3s}
-
-.mini h3{font-size:22px}.mini p{color:var(--muted);font-size:15.5px;margin-top:4px}
-.mini .go{margin-left:auto;flex:none;width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--navy);transition:background .3s,color .3s,transform .35s var(--spring)}
-.mini:hover .go{background:var(--navy);color:#fff}
-@media (max-width:760px){.duo{grid-template-columns:minmax(0,1fr)}.mini{padding:20px}}
-.process-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
-.info{display:flex;flex-direction:column;gap:22px}
-.info .it{display:flex;gap:16px;align-items:flex-start}
-.info .ic{flex:none;width:50px;height:50px;border-radius:16px;background:var(--ice-2);color:var(--navy);display:grid;place-items:center;transition:transform .5s var(--spring)}
-
-.info small{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.info a,.info address,.info span.v{font-style:normal;font-size:18px;color:var(--ink);text-decoration:none;font-weight:500}
-.info a:hover{color:var(--sky-d)}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="top">
-  <div class="wrap row1">
-    <a class="tel" data-phone-btn href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span data-phone></span></a>
-    <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><img src="img/logo.png" alt="Indigo Home GmbH" width="311" height="42"></a>
-    <a class="btn brass hcta" href="index.html#bewertung">Kostenlose Bewertung</a>
-    <button class="menu" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Indigo Home GmbH, zur Startseite"><img src="img/logo.png" alt="Indigo Home GmbH" width="296" height="40"></a>
+    <button class="menu" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation"><a href="verkauf.html" aria-current="page">Verkauf</a><a href="vermietung.html">Vermietung</a><a href="verwaltung.html">Verwaltung</a><a href="referenzen.html">Referenzen</a><a href="kontakt.html">Kontakt</a></nav>
   </div>
-  <nav class="nav" id="nav" aria-label="Hauptnavigation"><div class="wrap">
-      <a href="index.html">Startseite</a>
-      <a href="verkauf.html" aria-current="page">Verkauf</a>
-      <a href="vermietung.html">Vermietung</a>
-      <a href="verwaltung.html">Verwaltung</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a class="btn brass mcta" href="index.html#bewertung">Kostenlose Bewertung</a>
-  </div></nav>
 </header>
 <main>
-  <section class="subhero"><div class="wrap"><div class="txt hin"><span class="eyebrow">Verkauf und Vermarktung</span><h1>Verkaufen mit Erfahrung und Marktkenntnis</h1><p class="lead">Wohnung, Haus, Mehrfamilienhaus oder Bauland: Wir übernehmen den ganzen Verkauf und erzielen für Sie den bestmöglichen Verkaufserlös.</p></div><svg class="bld anim" viewBox="0 0 358 168" aria-hidden="true" style="--d:200ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg></div></section>
+  <section class="phead"><div class="wrap hin"><span class="label">Verkauf</span><h1>Ihre Immobilie verkaufen</h1><p class="lead">Wohnung, Haus, Mehrfamilienhaus oder Bauland: Wir übernehmen den ganzen Verkauf und erzielen für Sie den bestmöglichen Verkaufserlös.</p></div></section>
 
-  <section class="block" aria-labelledby="h-p">
-    <div class="wrap">
-      <div class="tl"><div class="side reveal"><span class="eyebrow">Ablauf</span><h2 id="h-p">So verkaufen wir Ihre Immobilie</h2><p>Sie können sich auf uns verlassen, von der Bewertung bis zur Beurkundung.</p></div><ol class="steps"><li class="reveal"><span class="n">01</span><div><h3>Bewertung</h3><p>Wir schätzen Ihre Immobilie ein und legen mit Ihnen den Verkaufspreis fest. Kostenlos.</p></div></li><li class="reveal"><span class="n">02</span><div><h3>Vermarktung</h3><p>Wir vermarkten Ihre Immobilie gezielt und prüfen Interessenten auf Motivation und Bonität.</p></div></li><li class="reveal"><span class="n">03</span><div><h3>Besichtigung und Verhandlung</h3><p>Wir führen die Besichtigungen und verhandeln den bestmöglichen Verkaufserlös.</p></div></li><li class="reveal"><span class="n">04</span><div><h3>Beurkundung</h3><p>Wir begleiten Sie bis zur Beurkundung und auf Wunsch bis zur Grundstückgewinnsteuer.</p></div></li></ol></div>
-    </div>
-  </section>
-  <section class="block" id="bewertung" aria-labelledby="h-b" style="padding-top:0">
-    <div class="wrap">
-      <div class="valband reveal"><svg class="bld " viewBox="0 0 358 168" aria-hidden="true" style="--d:0ms"><polygon style="--i:7" points="0.0,38.0 104.0,0.0 207.0,70.0 207.0,77.1 104.0,12.4 0.0,47.5"/><polygon style="--i:6" points="0.0,53.9 104.0,20.6 207.0,81.9 207.0,89.0 104.0,33.0 0.0,63.4"/><polygon style="--i:5" points="0.0,69.8 104.0,41.2 207.0,93.8 207.0,100.9 104.0,53.6 0.0,79.3"/><polygon style="--i:4" points="0.0,85.6 104.0,61.9 207.0,105.6 207.0,112.8 104.0,74.2 0.0,95.2"/><polygon style="--i:3" points="0.0,101.5 104.0,82.5 207.0,117.5 207.0,124.6 104.0,94.9 0.0,111.0"/><polygon style="--i:2" points="0.0,117.4 104.0,103.1 207.0,129.4 207.0,136.5 104.0,115.5 0.0,126.9"/><polygon style="--i:1" points="0.0,133.2 104.0,123.8 207.0,141.2 207.0,148.4 104.0,136.1 0.0,142.8"/><polygon style="--i:0" points="0.0,149.1 104.0,144.4 207.0,153.1 207.0,160.2 104.0,156.8 0.0,158.6"/><polygon style="--i:9" points="213.0,70.0 284.0,50.0 358.0,92.0 358.0,99.3 284.0,61.5 213.0,79.5"/><polygon style="--i:8" points="213.0,85.8 284.0,69.2 358.0,104.2 358.0,111.5 284.0,80.7 213.0,95.3"/><polygon style="--i:7" points="213.0,101.7 284.0,88.3 358.0,116.3 358.0,123.6 284.0,99.8 213.0,111.2"/><polygon style="--i:6" points="213.0,117.5 284.0,107.5 358.0,128.5 358.0,135.8 284.0,119.0 213.0,127.0"/><polygon style="--i:5" points="213.0,133.3 284.0,126.7 358.0,140.7 358.0,148.0 284.0,138.2 213.0,142.8"/><polygon style="--i:4" points="213.0,149.2 284.0,145.8 358.0,152.8 358.0,160.1 284.0,157.3 213.0,158.7"/></svg>
-        <div><span class="eyebrow">Kostenlos und unverbindlich</span><h2 id="h-b" style="margin-top:18px">Bewertung anfragen</h2>
-          <p class="l">Ein paar Angaben genügen. Wir melden uns so rasch wie möglich.</p>
-          <ul class="checks"><li>Vertraulich und ohne Verpflichtung</li><li>Persönliche Ansprechperson</li></ul></div>
-        <form class="form card fcard" data-form="bewertung" data-subject="Bewertungsanfrage" data-ok="Vielen Dank. Wir melden uns so rasch wie möglich für Ihre kostenlose Bewertung." novalidate>
-  <div><h3 class="ftitle">Kostenlose Bewertung anfragen</h3><p class="note" style="margin-top:6px">Unverbindlich und vertraulich. Wir melden uns so rasch wie möglich.</p></div>
-  <div class="field"><span class="lab" id="l-objektart">Objektart</span><div class="seg" role="radiogroup" aria-labelledby="l-objektart"><label><input type="radio" name="objektart" value="Wohnung" data-msg="Bitte objektart wählen."><span>Wohnung</span></label><label><input type="radio" name="objektart" value="Haus" data-msg="Bitte objektart wählen."><span>Haus</span></label><label><input type="radio" name="objektart" value="Mehrfamilienhaus" data-msg="Bitte objektart wählen."><span>Mehrfamilienhaus</span></label><label><input type="radio" name="objektart" value="Bauland" data-msg="Bitte objektart wählen."><span>Bauland</span></label><label><input type="radio" name="objektart" value="Gewerbe" data-msg="Bitte objektart wählen."><span>Gewerbe</span></label></div></div>
-  <div class="field"><label for="f-ort">PLZ und Ort der Liegenschaft *</label><input id="f-ort" name="ort" type="text" required placeholder="z.B. 8274 Tägerwilen" data-msg="Bitte den Ort der Liegenschaft angeben."></div>
+  <section class="sec"><div class="wrap">
+    <div class="shead reveal"><span class="label">Ablauf</span><h2>In vier Schritten zum Verkauf</h2></div>
+    <ol class="steps"><li class="reveal"><span class="n">01</span><h3>Bewertung</h3><p>Wir schätzen Ihre Immobilie ein und legen mit Ihnen den Verkaufspreis fest.</p></li><li class="reveal"><span class="n">02</span><h3>Vermarktung</h3><p>Wir vermarkten Ihre Immobilie gezielt und prüfen Interessenten auf Motivation und Bonität.</p></li><li class="reveal"><span class="n">03</span><h3>Besichtigung und Verhandlung</h3><p>Wir führen die Besichtigungen und verhandeln den bestmöglichen Verkaufserlös.</p></li><li class="reveal"><span class="n">04</span><h3>Beurkundung</h3><p>Wir begleiten Sie bis zur Beurkundung und auf Wunsch bis zur Grundstückgewinnsteuer.</p></li></ol>
+  </div></section>
+  <section class="sec line" id="bewertung" aria-labelledby="h-b"><div class="wrap two">
+    <div class="reveal"><span class="label">Kostenlos und unverbindlich</span><h2 id="h-b">Bewertung anfragen</h2><p class="txt">Ein paar Angaben genügen. Wir melden uns so rasch wie möglich und besprechen mit Ihnen das weitere Vorgehen.</p>
+      <dl class="kontakt"><dt>Telefon</dt><dd><a data-phone href="#"></a></dd><dt>E-Mail</dt><dd><a data-email href="#"></a></dd><dt>Adresse</dt><dd>Hauptstrasse 15, 8274 Tägerwilen</dd></dl></div>
+    <div class="reveal"><form class="form" data-form="bewertung" data-subject="Bewertungsanfrage" data-ok="Vielen Dank. Wir melden uns so rasch wie möglich für Ihre kostenlose Bewertung." novalidate>
+  <h3>Kostenlose Bewertung</h3>
+  <div class="field"><span class="lab" id="l-objektart">Objektart</span><div class="seg" role="radiogroup" aria-labelledby="l-objektart"><label><input type="radio" name="objektart" value="Wohnung"><span>Wohnung</span></label><label><input type="radio" name="objektart" value="Haus"><span>Haus</span></label><label><input type="radio" name="objektart" value="Mehrfamilienhaus"><span>Mehrfamilienhaus</span></label><label><input type="radio" name="objektart" value="Bauland"><span>Bauland</span></label><label><input type="radio" name="objektart" value="Gewerbe"><span>Gewerbe</span></label></div></div>
+  <div class="field"><label for="f-ort">PLZ und Ort der Liegenschaft *</label><input id="f-ort" name="ort" type="text" required data-msg="Bitte den Ort der Liegenschaft angeben."></div>
   <div class="row2"><div class="field"><label for="f-name">Name *</label><input id="f-name" name="name" type="text" required autocomplete="name" data-msg="Bitte Ihren Namen angeben."></div><div class="field"><label for="f-telefon">Telefon</label><input id="f-telefon" name="telefon" type="tel" autocomplete="tel"></div></div>
   <div class="field"><label for="f-email">E-Mail *</label><input id="f-email" name="email" type="email" required autocomplete="email" data-msg="Bitte Ihre E-Mail-Adresse angeben."></div>
   <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
   <p class="err" role="alert" hidden></p>
   <p class="ok" role="status" hidden></p>
-  <button class="btn brass" type="submit">Bewertung anfragen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button class="btn" type="submit">Bewertung anfragen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
   <p class="note">Ihre Angaben verwenden wir nur für Ihre Anfrage und geben sie nicht an Dritte weiter.</p>
-</form>
-      </div>
-    </div>
-  </section>
+</form></div>
+  </div></section>
 
 </main>
 <footer>
-  <div class="pline"><div class="wrap">
-    <span class="plab">Partner am Standort Tägerwilen</span>
-    <a class="ppill" href="https://www.eplus-elektro.ch" target="_blank" rel="noopener" aria-label="ElektroPlus GmbH, Elektroarbeiten (öffnet neue Seite)">
-      <span class="plogo"><img src="img/partner-elektroplus.png" alt="" width="34" height="34"><i class="spark"></i></span>
-      <span class="pname"><b>ElektroPlus GmbH</b><small>Wir bringen Spannung ins Haus</small></span>
-      <span class="pgo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    </a>
-  </div></div>
   <div class="wrap">
-    <div class="fbrand"><a class="brand" href="index.html" aria-label="Indigo Home GmbH"><img src="img/logo.png" alt="Indigo Home GmbH" width="311" height="42" loading="lazy"></a>
-      <p>Verkauf, Vermietung und Verwaltung von Immobilien. Persönlich, transparent und lösungsorientiert.</p></div>
-    <div><h3>Adresse</h3><address>Indigo Home GmbH<br>Hauptstrasse 15<br>8274 Tägerwilen</address></div>
-    <div><h3>Kontakt</h3><p><a data-phone href="#"></a><br><a data-email href="#"></a></p>
-      <div class="social"><a href="https://www.facebook.com/Indigo-Home-GmbH-Immobilien-112406141284418/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V11H7v4h3v9h4v-9h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a><a href="https://www.instagram.com/indigohomegmbh/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div></div>
-    <div><h3>Bürozeiten</h3><p>Montag bis Freitag<br>08.30–12.00 Uhr<br>13.30–17.00 Uhr</p></div>
-    <div class="legal"><span>© <span id="yr">2026</span> Indigo Home GmbH</span><span><a href="verkauf.html">Verkauf</a> · <a href="vermietung.html">Vermietung</a> · <a href="verwaltung.html">Verwaltung</a> · <a href="referenzen.html">Referenzen</a> · <a href="impressum.html">Impressum und Datenschutz</a></span></div>
+    <div class="fcols">
+      <div><img src="img/logo.png" alt="Indigo Home GmbH" width="252" height="34" loading="lazy"></div>
+      <div><h3>Adresse</h3><address>Indigo Home GmbH<br>Hauptstrasse 15<br>8274 Tägerwilen</address></div>
+      <div><h3>Kontakt</h3><p><a data-phone href="#"></a><br><a data-email href="#"></a></p></div>
+      <div><h3>Bürozeiten</h3><p>Montag bis Freitag<br>08.30–12.00 und 13.30–17.00 Uhr</p></div>
+    </div>
+    <div class="fbot">
+      <span>© <span id="yr">2026</span> Indigo Home GmbH</span>
+      <span class="flinks"><a href="https://www.facebook.com/Indigo-Home-GmbH-Immobilien-112406141284418/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/indigohomegmbh/" target="_blank" rel="noopener">Instagram</a><a href="impressum.html">Impressum und Datenschutz</a></span>
+      <a class="partner" href="https://www.eplus-elektro.ch" target="_blank" rel="noopener"><span>Partner am Standort</span><img src="img/partner-elektroplus.png" alt="" width="22" height="22"><b>ElektroPlus GmbH</b></a>
+    </div>
   </div>
 </footer>
 <script src="site.js"></script>
