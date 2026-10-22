@@ -195,3 +195,28 @@ footer a:hover{color:var(--navy);text-decoration:underline}
   .visual .hz{transform:scaleX(0);animation:hz 1.6s var(--ease) .3s forwards}
   @keyframes hz{to{transform:scaleX(1)}}
 }
+
+/* Provisionsrechner */
+.calc{background:var(--soft);padding:48px;display:flex;flex-direction:column}
+.clab{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cprice{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--navy);padding:8px 0 10px;margin-top:6px}
+.cprice span{font-size:18px;color:var(--muted);font-weight:300}
+.cprice input{flex:1;min-width:0;font:inherit;font-size:clamp(34px,4vw,52px);font-weight:200;letter-spacing:-.03em;color:var(--navy-d);background:transparent;border:0;padding:0;font-variant-numeric:tabular-nums}
+.cprice input:focus{outline:none}
+.cprice:focus-within{border-bottom-width:2px;padding-bottom:9px}
+.crange{-webkit-appearance:none;appearance:none;width:100%;height:24px;margin:28px 0 0;background:transparent;cursor:pointer}
+.crange::-webkit-slider-runnable-track{height:1px;background:linear-gradient(90deg,var(--navy) var(--fill,20%),#c9ced4 var(--fill,20%))}
+.crange::-moz-range-track{height:1px;background:#c9ced4}
+.crange::-moz-range-progress{height:1px;background:var(--navy)}
+.crange::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:#fff;border:1px solid var(--navy);transition:transform .2s}
+.crange::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:1px solid var(--navy)}
+.crange:active::-webkit-slider-thumb{transform:scale(1.2)}
+.cscale{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:4px}
+.cres{margin:40px 0 0;border-top:1px solid var(--line)}
+.cres div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.cres dt{font-size:15px;color:var(--muted)}
+.cres dd{margin:0;font-size:22px;font-weight:300;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cres .main dt{color:var(--ink)}
+.cres .main dd{font-size:clamp(26px,2.6vw,34px);color:var(--navy)}
+.cnote{margin-top:22px;font-size:13px;color:var(--muted)}
+@media (max-width:620px){.calc{padding:28px 22px}.cres div{flex-direction:column;gap:4px}}
