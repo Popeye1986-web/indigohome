@@ -45,15 +45,17 @@
   </div></section>
 
   <section class="sec line" id="provision" aria-labelledby="h-p"><div class="wrap two">
-    <div class="reveal"><span class="label">Provisionsrechner</span><h2 id="h-p">Was kostet mein Hausverkauf?</h2><p class="txt">Unsere Provision beträgt 2 % des Verkaufspreises. Geben Sie den erwarteten Verkaufspreis ein und sehen Sie sofort, was Sie bezahlen und was Ihnen bleibt.</p><a class="tlink" href="#bewertung">Verkaufspreis kostenlos schätzen lassen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
-    <form class="calc reveal" data-prov data-rate="0.02" onsubmit="return false" aria-label="Provisionsrechner">
+    <div class="reveal"><span class="label">Provisionsrechner</span><h2 id="h-p">Was kostet mein Hausverkauf?</h2><p class="txt">Unsere Provision beträgt 2&nbsp;% des Verkaufspreises, zuzüglich 8.1&nbsp;% Mehrwertsteuer. Geben Sie den erwarteten Verkaufspreis ein und sehen Sie sofort, was Sie bezahlen und was Ihnen bleibt.</p><a class="tlink" href="#bewertung">Verkaufspreis kostenlos schätzen lassen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
+    <form class="calc reveal" data-prov data-rate="0.02" data-mwst="0.081" onsubmit="return false" aria-label="Provisionsrechner">
       <label class="clab" for="p-preis">Erwarteter Verkaufspreis</label>
       <div class="cprice"><span>CHF</span><input id="p-preis" type="text" inputmode="numeric" value="1’000’000" autocomplete="off"></div>
       <input class="crange" type="range" min="100000" max="5000000" step="10000" value="1000000" aria-label="Verkaufspreis einstellen">
       <div class="cscale" aria-hidden="true"><span>100’000</span><span>5’000’000</span></div>
       <dl class="cres" aria-live="polite">
         <div><dt>Provision 2 %</dt><dd data-p="prov">CHF 20’000</dd></div>
-        <div class="main"><dt>Ihr Erlös nach Provision</dt><dd data-p="netto">CHF 980’000</dd></div>
+        <div><dt>Mehrwertsteuer 8.1 %</dt><dd data-p="mwst">CHF 1’620</dd></div>
+        <div class="sum"><dt>Total Kosten inkl. MWST</dt><dd data-p="total">CHF 21’620</dd></div>
+        <div class="main"><dt>Ihr Erlös nach Provision</dt><dd data-p="netto">CHF 978’380</dd></div>
       </dl>
       <p class="cnote">Unverbindliches Rechenbeispiel. Weitere Kosten wie Grundstückgewinnsteuer, Notariat und Grundbuch sind nicht enthalten.</p>
     </form>

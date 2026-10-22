@@ -114,17 +114,20 @@ window.KONTAKT = { telefon: "+41 44 593 76 15", email: "info@indigohome.ch" };
     addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true }); upd();
   }
 
-  // Provisionsrechner: Provision = Verkaufspreis × Satz (data-rate), Erlös = Verkaufspreis − Provision
+  // Provisionsrechner: Provision = Verkaufspreis × Satz (data-rate), plus MWST (data-mwst); Erlös = Verkaufspreis − Total
   const pv = document.querySelector("form[data-prov]");
   if (pv) {
-    const rate = parseFloat(pv.dataset.rate) || 0.02;
+    const rate = parseFloat(pv.dataset.rate) || 0.02, mwst = parseFloat(pv.dataset.mwst) || 0;
     const box = pv.querySelector("#p-preis"), rng = pv.querySelector(".crange");
     const fmt = n => Math.round(n).toLocaleString("de-CH");
     const parse = v => { const n = parseFloat(String(v).replace(/[^\d.]/g, "")); return isFinite(n) ? n : 0; };
     const show = price => {
-      const prov = price * rate;
+      // Provision 2 % zuzüglich MWST 8.1 % (Art. 25 MWSTG); auf Franken gerundet
+      const prov = Math.round(price * rate), mw = Math.round(prov * mwst), total = prov + mw;
       pv.querySelector('[data-p="prov"]').textContent = "CHF " + fmt(prov);
-      pv.querySelector('[data-p="netto"]').textContent = "CHF " + fmt(price - prov);
+      pv.querySelector('[data-p="mwst"]').textContent = "CHF " + fmt(mw);
+      pv.querySelector('[data-p="total"]').textContent = "CHF " + fmt(total);
+      pv.querySelector('[data-p="netto"]').textContent = "CHF " + fmt(price - total);
       const k = (Math.min(Math.max(price, +rng.min), +rng.max) - rng.min) / (rng.max - rng.min);
       rng.style.setProperty("--fill", (k * 100).toFixed(1) + "%");
     };

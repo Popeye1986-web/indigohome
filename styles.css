@@ -216,6 +216,8 @@ footer a:hover{color:var(--navy);text-decoration:underline}
 .cres div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
 .cres dt{font-size:15px;color:var(--muted)}
 .cres dd{margin:0;font-size:22px;font-weight:300;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cres .sum dt,.cres .sum dd{color:var(--ink);font-weight:500}
+.cres .sum dd{font-weight:400}
 .cres .main dt{color:var(--ink)}
 .cres .main dd{font-size:clamp(26px,2.6vw,34px);color:var(--navy)}
 .cnote{margin-top:22px;font-size:13px;color:var(--muted)}
