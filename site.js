@@ -105,6 +105,15 @@ window.KONTAKT = { telefon: "+41 44 593 76 15", email: "info@indigohome.ch" };
     }
   }
 
+  // Häuser im blauen Band bewegen sich beim Scrollen ruhig etwas langsamer als die Seite (Tiefeneffekt)
+  const par = document.querySelector(".visual .par");
+  if (par && !calm) {
+    const band = par.closest(".visual"); let tick = false;
+    const upd = () => { tick = false; const r = band.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+      const k = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; par.style.transform = `translateY(${(k * 60).toFixed(1)}px)`; };
+    addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true }); upd();
+  }
+
   // Schnellstart oben: Angaben ins Bewertungsformular übernehmen
   const q = document.querySelector("form[data-quick]");
   if (q) q.addEventListener("submit", e => {

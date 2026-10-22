@@ -178,3 +178,20 @@ footer a:hover{color:var(--navy);text-decoration:underline}
   .bld.anim polygon{transform-box:fill-box;transform-origin:0 50%;transform:scaleX(0);animation:floor 1s var(--ease) forwards;animation-delay:calc(var(--i) * 70ms + 500ms)}
   @keyframes floor{to{transform:none}}
 }
+
+/* Startseite: Titel Wort für Wort aus einer Maske, Häuser mit ruhigem Tiefeneffekt beim Scrollen */
+.words .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+.words .w>span{display:inline-block}
+.visual{position:relative}
+.visual .hz{position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.35);transform-origin:left}
+.visual .par{width:min(56%,560px);will-change:transform}
+.visual .par .bld{width:100%}
+@media (max-width:700px){.visual .par{width:86%}}
+@media (prefers-reduced-motion:no-preference){
+  .hero .hin>h1{opacity:1;animation:none}
+  .words .w>span{transform:translateY(110%);animation:wup 1.2s var(--ease) forwards}
+  .words .w:nth-child(1)>span{animation-delay:.15s}.words .w:nth-child(2)>span{animation-delay:.45s}.words .w:nth-child(3)>span{animation-delay:.75s}
+  @keyframes wup{to{transform:none}}
+  .visual .hz{transform:scaleX(0);animation:hz 1.6s var(--ease) .3s forwards}
+  @keyframes hz{to{transform:scaleX(1)}}
+}
